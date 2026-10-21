@@ -17,7 +17,7 @@ The following Jumpstart scenario will guide you on how to use the provided [Terr
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -80,7 +80,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 The only thing you need to do before executing the Terraform plan is to create the tfvars file which will be used by the plan. This is based on the Azure service principal you've just created and your subscription.
 
-- Navigate to the [terraform folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/aks/terraform) and fill in the terraform.tfvars file with the values for your environment.
+- Navigate to the [terraform folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/aks/terraform) and fill in the terraform.tfvars file with the values for your environment.
 
 In addition, validate that the AKS Kubernetes version is available in your region using the below Azure CLI command.
 
@@ -88,7 +88,7 @@ In addition, validate that the AKS Kubernetes version is available in your regio
 az aks get-versions -l "<Your Azure Region>"
 ```
 
-In case the AKS service is not available in your region, you can change the AKS Kubernetes version in the [*variables.tf*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks/terraform/variables.tf) file by searching for *kubernetes_version*.
+In case the AKS service is not available in your region, you can change the AKS Kubernetes version in the [*variables.tf*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks/terraform/variables.tf) file by searching for *kubernetes_version*.
 
 - Run the *`terraform init`* command which will download the required terraform providers.
 
@@ -106,7 +106,7 @@ In case the AKS service is not available in your region, you can change the AKS 
 
 ## Connecting to Azure Arc
 
-- Now that you have a running AKS cluster, edit the environment variables section in the included [az_connect_aks](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks/terraform/scripts/az_connect_aks.sh) shell script.
+- Now that you have a running AKS cluster, edit the environment variables section in the included [az_connect_aks](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks/terraform/scripts/az_connect_aks.sh) shell script.
 
     ![Screenshot showing az_connect_aks shell script](./05.png)
 
@@ -118,7 +118,7 @@ In case the AKS service is not available in your region, you can change the AKS 
 
     ![Screenshot showing how to access Cloud Shell in Visual Studio Code](./07.png)
 
-- Edit the environment variables in the [*az_connect_aks*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks/terraform/scripts/az_connect_aks.sh) shell script to match your parameters, upload it to the Cloud Shell environment and run it using the *`. ./az_connect_aks.sh`* command.
+- Edit the environment variables in the [*az_connect_aks*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks/terraform/scripts/az_connect_aks.sh) shell script to match your parameters, upload it to the Cloud Shell environment and run it using the *`. ./az_connect_aks.sh`* command.
 
     > **Note:** The extra dot is due to the script having an *export* function and needs to have the vars exported in the same shell session as the rest of the commands.
 

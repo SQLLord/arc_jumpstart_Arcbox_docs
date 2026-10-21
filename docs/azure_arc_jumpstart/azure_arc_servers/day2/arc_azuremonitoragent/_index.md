@@ -83,14 +83,14 @@ As mentioned, this deployment will leverage ARM templates.
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
-- Edit the [*parameters file*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/azuremonitoragent/ama-template.parameters.json) providing the values that match your configuration as described above.
+- Edit the [*parameters file*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/azuremonitoragent/ama-template.parameters.json) providing the values that match your configuration as described above.
 
     ![Screenshot ARM template parameters file](./09.png)
 
-- Choose the ARM template that matches your operating system, for [*Windows*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/azuremonitoragent/ama-windows-template.json) and [*Linux*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/azuremonitoragent/ama-linux-template.json), deploy the template by running the following command:
+- Choose the ARM template that matches your operating system, for [*Windows*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/azuremonitoragent/ama-windows-template.json) and [*Linux*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/azuremonitoragent/ama-linux-template.json), deploy the template by running the following command:
 
     ```shell
     az deployment group create --resource-group <Name of the Azure resource group> \

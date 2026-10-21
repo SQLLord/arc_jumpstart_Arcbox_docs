@@ -125,7 +125,7 @@ In this scenario, you will create a new Release pipeline to deploy the environme
 
   - Change the Template location to "URL of the file"
 
-  - Copy the raw URLs for both the [template](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_data_jumpstart/aks/ARM/azuredeploy.json) and the [parameters](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_data_jumpstart/aks/ARM/azuredeploy.parameters.json) json files and paste it in it's the proper field.
+  - Copy the raw URLs for both the [template](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_data_jumpstart/aks/ARM/azuredeploy.json) and the [parameters](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_data_jumpstart/aks/ARM/azuredeploy.parameters.json) json files and paste it in it's the proper field.
 
   - The deployment ARM template requires you to provide parameters values. Click on the _Edit Override template parameters_ button to add the values of your parameters.
 

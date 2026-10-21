@@ -76,7 +76,7 @@ This guide assumes that you already have an installation of [Microsoft Configura
 
     ![Screenshot showing the Azure portal with empty resource group](./01.png)
 
-- Download the [_az_connect_win_ConfigMgr_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/scripts/az_connect_win_ConfigMgr.ps1) PowerShell script.
+- Download the [_az_connect_win_ConfigMgr_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/scripts/az_connect_win_ConfigMgr.ps1) PowerShell script.
 
 - Change the environment variables according to your environment and save the script.
 
@@ -158,7 +158,7 @@ In order for Configuration Manager to onboard servers in this scenario, we will 
 
     ![Screenshot showing adding the PowerShell script details](./20.png)
 
-- Paste the content of the [_az_connect_win_ConfigMgr_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/scripts/az_connect_win_ConfigMgr.ps1) PowerShell script you downloaded earlier and click “Ok”.
+- Paste the content of the [_az_connect_win_ConfigMgr_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/scripts/az_connect_win_ConfigMgr.ps1) PowerShell script you downloaded earlier and click “Ok”.
 
     ![Screenshot showing adding the PowerShell script code](./21.png)
 

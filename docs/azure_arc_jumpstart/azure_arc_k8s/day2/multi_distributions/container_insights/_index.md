@@ -30,7 +30,7 @@ Kubernetes extensions are add-ons for Kubernetes clusters. The extensions featur
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -96,7 +96,7 @@ To create a new extension instance, we will use the _k8s-extension create_ comma
 
 - Navigate to the folder that has the deployment script.
 
-- Edit the environment variables in [the script](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/multi_distributions/container_insights/azure_monitor_alerts.sh) to match your environment parameters.
+- Edit the environment variables in [the script](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/multi_distributions/container_insights/azure_monitor_alerts.sh) to match your environment parameters.
 
   - _`subscriptionId`_ - Your Azure subscription ID
   - _`appId`_ - Your Azure service principal name
@@ -112,7 +112,7 @@ To create a new extension instance, we will use the _k8s-extension create_ comma
 
   ![Screenshot parameter examples](./02.png)
 
-- After editing the variables, to run the script, navigate to the [script folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/multi_distributions/container_insights) and run the command
+- After editing the variables, to run the script, navigate to the [script folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/multi_distributions/container_insights) and run the command
 
   ```shell  
   sudo chmod +x azure_monitor_alerts.sh && . ./azure_monitor_alerts.sh

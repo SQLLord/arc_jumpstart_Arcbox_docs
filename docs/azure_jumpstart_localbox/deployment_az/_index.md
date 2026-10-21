@@ -54,7 +54,7 @@ Azure Bicep is used to deploy LocalBox into your Azure subscription. Read on to 
 - Clone the Arc Jumpstart GitHub repository
 
   ```shell
-  git clone https://github.com/microsoft/azure_arc.git
+  git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
   ```
 
 - [Install or update Azure CLI to version 2.65.0 or above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -95,7 +95,7 @@ Azure Bicep is used to deploy LocalBox into your Azure subscription. Read on to 
 
 > **Note:** Please avoid using the $ symbol in the `windowsAdminPassword`. Using this symbol can cause the LogonScript to fail.
 
-- Edit the [main.bicepparam](https://github.com/microsoft/azure_arc/blob/main/azure_jumpstart_localbox/bicep/main.bicepparam) template parameters file and supply values for your environment.
+- Edit the [main.bicepparam](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_jumpstart_localbox/bicep/main.bicepparam) template parameters file and supply values for your environment.
 
 | Name | Type | Description | Default |
 | --- | --- | --- | --- |
@@ -125,7 +125,7 @@ Example parameter-file:
 
 ![Screenshot showing example parameters](./parameters_bicep.png)
 
-- Create a new resource group and then deploy the Bicep file. Navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_jumpstart_localbox/bicep) and run the following command:
+- Create a new resource group and then deploy the Bicep file. Navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_jumpstart_localbox/bicep) and run the following command:
 
   ```shell
   az group create --name "<resource-group-name>"  --location "<location>"

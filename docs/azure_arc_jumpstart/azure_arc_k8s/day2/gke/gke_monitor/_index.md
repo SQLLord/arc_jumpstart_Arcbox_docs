@@ -19,7 +19,7 @@ in this scenario, you will hook the GKE cluster to Azure Monitor by deploying th
 * Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 * [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -63,7 +63,7 @@ in this scenario, you will hook the GKE cluster to Azure Monitor by deploying th
 
 ## Azure Monitor for Containers Integration
 
-* In order to keep your local environment clean and untouched, we will use [Google Cloud Shell](https://cloud.google.com/shell) to run the [*gke_monitor_onboarding*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/gke/gke_monitor/gke_monitor_onboarding.sh) shell script against the GKE connected cluster.
+* In order to keep your local environment clean and untouched, we will use [Google Cloud Shell](https://cloud.google.com/shell) to run the [*gke_monitor_onboarding*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/gke/gke_monitor/gke_monitor_onboarding.sh) shell script against the GKE connected cluster.
 
 * Before integrating the cluster with Azure Monitor for Containers, click on the "Insights (preview)" blade for the connected Arc cluster to show how the cluster is not currently being monitored.
 

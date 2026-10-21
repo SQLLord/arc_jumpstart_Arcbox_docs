@@ -15,7 +15,7 @@ The following Jumpstart scenario will guide you on how to use the provided [Terr
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -113,7 +113,7 @@ The following Jumpstart scenario will guide you on how to use the provided [Terr
 
 The only thing you need to do before executing the Terraform plan is to create the tfvars file which will be used by the plan. This is based on the Azure service principal you've just created and your subscription.  
 
-- Navigate to the [terraform folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/gke/terraform) and create a terraform.tfvars file with values for your environment.
+- Navigate to the [terraform folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/gke/terraform) and create a terraform.tfvars file with values for your environment.
 
   ```shell
   subscriptionId="<Your Azure subscription ID>"
@@ -178,7 +178,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 ## Connecting to Azure Arc
 
-- Now that you have a running GKE cluster, edit the environment variables section in the included [az_connect_gke](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/gke/terraform/scripts/az_connect_gke.sh) shell script.
+- Now that you have a running GKE cluster, edit the environment variables section in the included [az_connect_gke](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/gke/terraform/scripts/az_connect_gke.sh) shell script.
 
   ![Export environment variables](./26.png)
 
@@ -194,7 +194,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
   ![Open Google Cloud Shell session and authenticate against the GKE cluster](./30.png)
 
-- Upload the [*az_connect_gke*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/gke/terraform/scripts/az_connect_gke.sh) shell script and run it using the *`. ./az_connect_gke.sh`* command.
+- Upload the [*az_connect_gke*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/gke/terraform/scripts/az_connect_gke.sh) shell script and run it using the *`. ./az_connect_gke.sh`* command.
 
   > **Note:** The extra dot is due to the script having an *export* function and needs to have the vars exported in the same shell session as the rest of the commands.
 

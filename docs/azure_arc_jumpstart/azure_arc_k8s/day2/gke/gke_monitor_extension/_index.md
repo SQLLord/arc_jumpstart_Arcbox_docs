@@ -21,7 +21,7 @@ Kubernetes extensions are add-ons for Kubernetes clusters. The extensions featur
 * Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 * [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -67,7 +67,7 @@ Kubernetes extensions are add-ons for Kubernetes clusters. The extensions featur
 
 To create a new extension Instance, we will use the _k8s-extension create_ command while passing in values for the mandatory parameters. This scenario provides you with the automation to deploy the Azure Monitor extension on your Azure Arc-enabled Kubernetes cluster
 
-* In order to keep your local environment clean and untouched, we will use [Google Cloud Shell](https://cloud.google.com/shell) to run the [*gke_monitor_onboarding*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/gke/gke_monitor_extension/azure_monitor_k8s_extension.sh) shell script against the GKE connected cluster.
+* In order to keep your local environment clean and untouched, we will use [Google Cloud Shell](https://cloud.google.com/shell) to run the [*gke_monitor_onboarding*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/gke/gke_monitor_extension/azure_monitor_k8s_extension.sh) shell script against the GKE connected cluster.
 
 * Before integrating the cluster with Azure Monitor for Containers, click on the "Insights (preview)" blade for the connected Arc cluster to show how the cluster is not currently being monitored.
 

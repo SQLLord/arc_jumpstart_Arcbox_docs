@@ -185,7 +185,7 @@ To create the GitOps configuration and it's respective Kubernetes resources, we'
 
 - Linux and MacOS
 
-    Edit the environment variables in the [_az_k8sconfig_helm_microk8s_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/microk8s/gitops/helm/az_k8sconfig_helm_microk8s.sh) shell script to match your parameters, and run the below command.
+    Edit the environment variables in the [_az_k8sconfig_helm_microk8s_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/microk8s/gitops/helm/az_k8sconfig_helm_microk8s.sh) shell script to match your parameters, and run the below command.
 
     ```shell
     . ./az_k8sconfig_helm_microk8s.sh
@@ -195,7 +195,7 @@ To create the GitOps configuration and it's respective Kubernetes resources, we'
 
 - Windows
 
-    Edit the environment variables in the [_az_k8sconfig_helm_microk8s_windows_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/microk8s/gitops/helm/az_k8sconfig_helm_microk8s_windows.ps1) PowerShell file to match your parameters, and run it using the ```.\az_k8sconfig_helm_microk8s.ps1``` command.
+    Edit the environment variables in the [_az_k8sconfig_helm_microk8s_windows_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/microk8s/gitops/helm/az_k8sconfig_helm_microk8s_windows.ps1) PowerShell file to match your parameters, and run it using the ```.\az_k8sconfig_helm_microk8s.ps1``` command.
 
     For example:
 
@@ -295,7 +295,7 @@ To delete the GitOps configuration and it's respective Kubernetes resources, we'
 
 - Linux and MacOS
 
-    Edit the environment variables to match the Azure Arc Kubernetes cluster and Resources in the [_az_k8sconfig_helm_cleanup_microk8s_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/microk8s/gitops/helm/az_k8sconfig_helm_cleanup_microk8s.sh) shell script, then run the file:
+    Edit the environment variables to match the Azure Arc Kubernetes cluster and Resources in the [_az_k8sconfig_helm_cleanup_microk8s_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/microk8s/gitops/helm/az_k8sconfig_helm_cleanup_microk8s.sh) shell script, then run the file:
 
     ```shell
     ./az_k8sconfig_helm_cleanup_microk8s.sh
@@ -303,7 +303,7 @@ To delete the GitOps configuration and it's respective Kubernetes resources, we'
 
 - Windows
 
-    Edit the environment variables to match the Azure Arc Kubernetes cluster and Resources in the [_az_k8sconfig_helm_cleanup_microk8s_windows_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/microk8s/gitops/helm/az_k8sconfig_helm_cleanup_microk8s_windows.ps1) script, then run the file:
+    Edit the environment variables to match the Azure Arc Kubernetes cluster and Resources in the [_az_k8sconfig_helm_cleanup_microk8s_windows_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/microk8s/gitops/helm/az_k8sconfig_helm_cleanup_microk8s_windows.ps1) script, then run the file:
 
     ```powershell
     .\az_k8sconfig_helm_cleanup_microk8s_windows.ps1

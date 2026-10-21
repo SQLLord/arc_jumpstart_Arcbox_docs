@@ -76,7 +76,7 @@ LocalBox comes pre-configured with [AKS enabled by Azure Arc](https://learn.micr
 
 ## Advanced Configurations
 
-Some users may be interested in changing LocalBox's default configuration. Many settings can be configured by modifying the values in the [_LocalBox-Config.psd1_](https://github.com/microsoft/azure_arc/blob/main/azure_jumpstart_Localbox/artifacts/PowerShell/LocalBox-Config.psd1) PowerShell file. If you wish to make changes to this file, you must fork the Jumpstart repo and make the changes in your fork, then set the optional _githubAccount_ and _githubBranch_ deployment template parameters to point to your fork.
+Some users may be interested in changing LocalBox's default configuration. Many settings can be configured by modifying the values in the [_LocalBox-Config.psd1_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_jumpstart_Localbox/artifacts/PowerShell/LocalBox-Config.psd1) PowerShell file. If you wish to make changes to this file, you must fork the Jumpstart repo and make the changes in your fork, then set the optional _githubAccount_ and _githubBranch_ deployment template parameters to point to your fork.
 
   > **Note:** Advanced configuration deployments are not supported by the Jumpstart team. Changes made to the _LocalBox-Config.psd1_ file may result in failures at any point in LocalBox deployment. Make changes to this file only if you understand the implications of the change.
 

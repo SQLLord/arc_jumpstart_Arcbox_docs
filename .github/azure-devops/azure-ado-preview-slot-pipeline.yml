@@ -33,7 +33,7 @@ stages:
         - task: GitHubComment@0
           inputs:
             gitHubConnection: 'Azure'
-            repositoryName: 'Azure/arc_jumpstart_docs'
+            repositoryName: 'SQLLord/arc_jumpstart_Arcbox_docs'
             comment: $(message)
         - bash: |
             if [ "$(error)" == "No" ]; then

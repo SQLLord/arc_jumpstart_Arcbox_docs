@@ -15,7 +15,7 @@ The following Jumpstart scenario will guide you on how to use the provided [Terr
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -95,7 +95,7 @@ Before executing the Terraform plan, you must set the environment variables whic
 
 - Retrieve your Azure subscription ID and tenant ID using the *`az account list`* command.
 
-- The Terraform plan creates resources in both Microsoft Azure and VMware vSphere. It then executes a script on the virtual machine to install the Azure Arc agent and all necessary artifacts. This script requires certain information about your VMware vSphere and Azure environments. Edit [_scripts/vars.sh_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/vmware/ubuntu/terraform/scripts/vars.sh) and update each of the variables with the appropriate values.
+- The Terraform plan creates resources in both Microsoft Azure and VMware vSphere. It then executes a script on the virtual machine to install the Azure Arc agent and all necessary artifacts. This script requires certain information about your VMware vSphere and Azure environments. Edit [_scripts/vars.sh_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/vmware/ubuntu/terraform/scripts/vars.sh) and update each of the variables with the appropriate values.
 
   - TF_VAR_subscription_id=Your Azure subscription ID
   - TF_VAR_client_id=Your Azure service principal name
@@ -111,11 +111,11 @@ Before executing the Terraform plan, you must set the environment variables whic
 
 - From CLI, navigate to the _azure_arc_servers_jumpstart/vmware/ubuntu/terraform_ directory of the cloned repo.
 
-- Export the environment variables you edited by running [_scripts/vars.sh_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/vmware/ubuntu/terraform/scripts/vars.sh) with the source command as shown below. Terraform requires these to be set for the plan to execute properly. Note that this script will also be automatically executed remotely on the virtual machine as part of the Terraform deployment.
+- Export the environment variables you edited by running [_scripts/vars.sh_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/vmware/ubuntu/terraform/scripts/vars.sh) with the source command as shown below. Terraform requires these to be set for the plan to execute properly. Note that this script will also be automatically executed remotely on the virtual machine as part of the Terraform deployment.
 
     ```source ./scripts/vars.sh```
 
-- In addition to the _TF_VAR_ environment variables you've just exported, edit the Terraform variables in the [_terraform.tfvars_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/vmware/ubuntu/terraform/terraform.tfvars) to match your VMware vSphere environment.
+- In addition to the _TF_VAR_ environment variables you've just exported, edit the Terraform variables in the [_terraform.tfvars_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/vmware/ubuntu/terraform/terraform.tfvars) to match your VMware vSphere environment.
 
     ![ TF_VAR environment variables](./01.png)
 

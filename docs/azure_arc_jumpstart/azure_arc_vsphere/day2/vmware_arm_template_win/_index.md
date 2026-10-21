@@ -17,7 +17,7 @@ The following Jumpstart scenario will guide you on how to use the provided ARM t
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -73,7 +73,7 @@ As mentioned, this deployment will leverage an ARM template. You will deploy a s
 
 - Before deploying the ARM template, login to Azure using AZ CLI with the *`az login`* command.
 
-- The deployment will use an ARM template parameters file to customize your environment. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_vsphere_jumpstart/vmware_arm_template_win/azuredeploy.json) file located in your local cloned repository folder. Example parameters files are located [here](https://github.com/microsoft/azure_arc/blob/main/azure_arc_vsphere_jumpstart/vmware_arm_template_win/azurereploy.parameters.json). Fill out the parameters according to your environment:
+- The deployment will use an ARM template parameters file to customize your environment. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_vsphere_jumpstart/vmware_arm_template_win/azuredeploy.json) file located in your local cloned repository folder. Example parameters files are located [here](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_vsphere_jumpstart/vmware_arm_template_win/azurereploy.parameters.json). Fill out the parameters according to your environment:
 
   - _`virtualMachineName`_ - the name of the Windows virtual machine that will be created
   - _`customLocationName`_ - the name of your Azure Arc custom location
@@ -85,7 +85,7 @@ As mentioned, this deployment will leverage an ARM template. You will deploy a s
   - _`adminUserName`_ - the admin username for the created Windows VM
   - _`adminUserPassword`_ - the admin user password for the created Windows VM
   
-- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/blob/main/azure_arc_vsphere_jumpstart/vmware_arm_template_win/) and run the below command.
+- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_vsphere_jumpstart/vmware_arm_template_win/) and run the below command.
 
     ```shell
     az deployment group create \

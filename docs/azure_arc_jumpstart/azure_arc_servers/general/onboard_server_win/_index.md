@@ -75,7 +75,7 @@ The following Jumpstart scenario will guide you on how to connect an Windows mac
 
     ![Screenshot showing the Azure portal with empty resource group](./01.png)
 
-- Download the [az_connect_win](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/scripts/az_connect_win.ps1) PowerShell script.
+- Download the [az_connect_win](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/scripts/az_connect_win.ps1) PowerShell script.
 
 - Change the environment variables according to your environment and copy the script to the designated machine.
 

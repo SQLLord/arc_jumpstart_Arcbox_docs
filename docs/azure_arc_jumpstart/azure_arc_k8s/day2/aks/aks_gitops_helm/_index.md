@@ -127,17 +127,17 @@ For our scenario, notice we have two Helm charts in the Arc Jumpstart Apps GitHu
 
 - In order to keep your local environment clean and untouched, we will use [Azure Cloud Shell](https://learn.microsoft.com/azure/cloud-shell/overview) (located in the top-right corner of the Azure portal) to run the *az_k8sconfig_helm_aks* shell script against the AKS connected cluster. **Make sure Cloud Shell is configured to use Bash.**
 
-- Download [the script](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks/gitops/helm/az_k8sconfig_helm_aks.sh) using below command.
+- Download [the script](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks/gitops/helm/az_k8sconfig_helm_aks.sh) using below command.
 
     ```shell
-    curl -L https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/aks/gitops/helm/az_k8sconfig_helm_aks.sh -o ~/az_k8sconfig_helm_aks.sh
+    curl -L https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/aks/gitops/helm/az_k8sconfig_helm_aks.sh -o ~/az_k8sconfig_helm_aks.sh
     ```
 
     ![Open Azure Cloud Shell](./08.png)
 
     ![Download file to Azure Cloud Shell](./09.png)
 
-- Edit the environment variables in the [*az_k8sconfig_helm_aks*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks/gitops/helm/az_k8sconfig_helm_aks.sh) shell script to match your parameters and run it using the _`. ./az_k8sconfig_helm_aks.sh`_ command.
+- Edit the environment variables in the [*az_k8sconfig_helm_aks*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks/gitops/helm/az_k8sconfig_helm_aks.sh) shell script to match your parameters and run it using the _`. ./az_k8sconfig_helm_aks.sh`_ command.
 
     ![Screenshot parameter](./10.png)
 
@@ -250,4 +250,4 @@ For our scenario, notice we have two Helm charts in the Arc Jumpstart Apps GitHu
 
 ## Cleanup
 
-To delete the GitOps configuration and it's respective Kubernetes resources, edit the environment variables to match the Azure Arc Kubernetes cluster and Resources in the [az_k8sconfig_helm_cleanup](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks/gitops/helm/az_k8sconfig_helm_cleanup.sh) script, upload it to Cloud Shell and run it using the _`. ./az_k8sconfig_helm_cleanup.sh`_ command.
+To delete the GitOps configuration and it's respective Kubernetes resources, edit the environment variables to match the Azure Arc Kubernetes cluster and Resources in the [az_k8sconfig_helm_cleanup](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks/gitops/helm/az_k8sconfig_helm_cleanup.sh) script, upload it to Cloud Shell and run it using the _`. ./az_k8sconfig_helm_cleanup.sh`_ command.

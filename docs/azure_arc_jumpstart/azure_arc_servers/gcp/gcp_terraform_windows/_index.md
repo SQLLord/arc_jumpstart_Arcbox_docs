@@ -15,7 +15,7 @@ The following Jumpstart scenario will guide you on how to use the provided [Terr
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -131,7 +131,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 The only thing you need to do before executing the Terraform plan is to edit the tfvars file which will be used by the plan to customize it to your environment.
 
-- Navigate to the [terraform folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/gcp/ubuntu/terraform) and fill in the terraform.tfvars file with the values for your environment.
+- Navigate to the [terraform folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/gcp/ubuntu/terraform) and fill in the terraform.tfvars file with the values for your environment.
 
 - Run the *`terraform init`* command which will download the required terraform providers.
 
@@ -151,7 +151,7 @@ The only thing you need to do before executing the Terraform plan is to edit the
 
 - If you want to demo/control the actual registration process, do the following:
 
-- Before running the *`terraform apply`* command, open [*main.tf*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/gcp/windows/terraform/main.tf) and comment out the *`windows-startup-script-ps1 = local_file.install_arc_agent_ps1.content`* line and save the file.
+- Before running the *`terraform apply`* command, open [*main.tf*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/gcp/windows/terraform/main.tf) and comment out the *`windows-startup-script-ps1 = local_file.install_arc_agent_ps1.content`* line and save the file.
 
     ![Screenshot showing main.tf being commented to disable automatic onboarding of Azure Arc agent](./13.png)
 

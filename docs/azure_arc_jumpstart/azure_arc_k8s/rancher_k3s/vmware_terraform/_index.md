@@ -15,7 +15,7 @@ The following Jumpstart scenario will guide you on how to use the provided [Terr
 * Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 * [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -91,7 +91,7 @@ Before executing the Terraform plan, you must set the environment variables whic
 
 * The Terraform plan creates resources in both Microsoft Azure and VMware vSphere. It then executes a script on the virtual machine to install the Azure Arc agent and all necessary artifacts. This script requires certain information about your VMware vSphere and Azure environments.
 
-* Edit [*scripts/vars.sh*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform/scripts/vars.sh) and update each of the variables with the appropriate values.
+* Edit [*scripts/vars.sh*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform/scripts/vars.sh) and update each of the variables with the appropriate values.
 
   * TF_VAR_subscription_id=Your Azure subscription ID
   * TF_VAR_client_id=Your Azure service principal name
@@ -106,15 +106,15 @@ Before executing the Terraform plan, you must set the environment variables whic
   * TF_VAR_admin_user=OS Admin Username
   * TF_VAR_admin_password=OS Admin Password
 
-* From CLI, navigate to the [*azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform*](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform) directory of the cloned repo.
+* From CLI, navigate to the [*azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform*](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform) directory of the cloned repo.
 
-* Export the environment variables you edited by running [*scripts/vars.sh*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform/scripts/vars.sh) with the source command as shown below. Terraform requires these to be set for the plan to execute properly. Note that this script will also be automatically executed remotely on the virtual machine as part of the Terraform deployment.
+* Export the environment variables you edited by running [*scripts/vars.sh*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform/scripts/vars.sh) with the source command as shown below. Terraform requires these to be set for the plan to execute properly. Note that this script will also be automatically executed remotely on the virtual machine as part of the Terraform deployment.
 
     ```shell
     source ./scripts/vars.sh
     ```
 
-* In addition to the *TF_VAR* environment variables you've just exported, edit the Terraform variables in the [*terraform.tfvars*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform/terraform.tfvars) to match your VMware vSphere environment.
+* In addition to the *TF_VAR* environment variables you've just exported, edit the Terraform variables in the [*terraform.tfvars*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform/terraform.tfvars) to match your VMware vSphere environment.
 
     ![TF_VAR environment variables](./01.png)
 
@@ -140,7 +140,7 @@ Before executing the Terraform plan, you must set the environment variables whic
 
     ![Delete Azure Arc-enabled Kubernetes cluster](./07.png)
 
-* If you want to nuke the entire environment, just delete the Azure resource group and the newly generated *az_connect_k3s* shell script in the [*scripts*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform/scripts) folder.
+* If you want to nuke the entire environment, just delete the Azure resource group and the newly generated *az_connect_k3s* shell script in the [*scripts*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/rancher_k3s/vmware/terraform/scripts) folder.
 
     ![Delete Azure resource group](./08.png)
 

@@ -19,7 +19,7 @@ By the end of this guide, you will have two Azure Kubernetes Service (AKS) clust
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -94,14 +94,14 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 - User is editing the ARM template parameters file (1-time edit). These parameters values are being used throughout the deployment.
 
-- Main [_azuredeploy_ ARM template](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/aks/DR/ARM/azuredeploy.json) will initiate the deployment of the linked ARM templates:
+- Main [_azuredeploy_ ARM template](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/aks/DR/ARM/azuredeploy.json) will initiate the deployment of the linked ARM templates:
 
-  - [_VNET_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/aks/DR/ARM/VNET.json) - Deploys three Virtual Networks, two for each site where the clusters will be located and a third Virtual Network to be used by the Client virtual machine.
-  - [_aks_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/aks/DR/ARM/aks.json) - Deploys the two AKS clusters in both sites (primary and secondary) where all the Azure Arc data services will be deployed.
-  - [_clientVm_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/aks/DR/ARM/clientVm.json) - Deploys the client Windows VM. This is where all user interactions with the environment are made from.
-  - [_logAnalytics_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/aks/DR/ARM/logAnalytics.json) - Deploys Azure Log Analytics workspace to support Azure Arc-enabled data services logs uploads.
+  - [_VNET_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/aks/DR/ARM/VNET.json) - Deploys three Virtual Networks, two for each site where the clusters will be located and a third Virtual Network to be used by the Client virtual machine.
+  - [_aks_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/aks/DR/ARM/aks.json) - Deploys the two AKS clusters in both sites (primary and secondary) where all the Azure Arc data services will be deployed.
+  - [_clientVm_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/aks/DR/ARM/clientVm.json) - Deploys the client Windows VM. This is where all user interactions with the environment are made from.
+  - [_logAnalytics_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/aks/DR/ARM/logAnalytics.json) - Deploys Azure Log Analytics workspace to support Azure Arc-enabled data services logs uploads.
 
-  - User remotes into client Windows VM, which automatically kicks off the [_DataServicesLogonScript_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/aks/DR/ARM/artifacts/DataServicesLogonScript.ps1) PowerShell script that deploy and configure Azure Arc-enabled data services on the AKS clusters including the data controllers and SQL Managed Instances, in addition to configuring disaster recovery between the two clusters.
+  - User remotes into client Windows VM, which automatically kicks off the [_DataServicesLogonScript_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/aks/DR/ARM/artifacts/DataServicesLogonScript.ps1) PowerShell script that deploy and configure Azure Arc-enabled data services on the AKS clusters including the data controllers and SQL Managed Instances, in addition to configuring disaster recovery between the two clusters.
 
   - In addition to deploying the data controllers and SQL Managed Instances, the sample [_AdventureWorks_](https://learn.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms) database will restored automatically for you as well on the primary cluster.
 
@@ -109,7 +109,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 As mentioned, this deployment will leverage ARM templates. You will deploy a single template that will initiate the entire automation for this scenario.
 
-- The deployment is using the ARM template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/aks/DR/ARM/azuredeploy.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/aks/DR/ARM/artifacts/azuredeploy.parameters.example.json).
+- The deployment is using the ARM template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/aks/DR/ARM/azuredeploy.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/aks/DR/ARM/artifacts/azuredeploy.parameters.example.json).
 
   - _`sshRSAPublicKey`_ - Your SSH public key
   - _`spnClientId`_ - Your Azure service principal id
@@ -125,14 +125,14 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
 
     > **Note:** This scenario goes through the capability to failover one Azure Arc-enabled SQL Managed Instance to another instance on a different cluster. If you would like to learn about high availability within the same cluster, you can check our Jumpstart [SQL Managed Instance Availability Groups Failover](../aks_mssql_ha/) scenario.
 
-- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/aks/DR/ARM) and run the below command:
+- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/aks/DR/ARM) and run the below command:
 
     ```shell
     az group create --name <Name of the Azure resource group> --location <Azure Region>
     az deployment group create \
     --resource-group <Name of the Azure resource group> \
     --name <The name of this deployment> \
-    --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_data_jumpstart/aks/DR/ARM/azuredeploy.json \
+    --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_data_jumpstart/aks/DR/ARM/azuredeploy.json \
     --parameters <The _azuredeploy.parameters.json_ parameters file location>
     ```
 
@@ -145,7 +145,7 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
     az deployment group create \
     --resource-group Arc-Data-Demo \
     --name arcdata \
-    --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_data_jumpstart/aks/DR/ARM/azuredeploy.json \
+    --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_data_jumpstart/aks/DR/ARM/azuredeploy.json \
     --parameters azuredeploy.parameters.json
     ```
 
@@ -204,7 +204,7 @@ If you already have [Microsoft Defender for Cloud](https://learn.microsoft.com/a
 
 ### Post Deployment
 
-- At first login, as mentioned in the "Automation Flow" section above, the [_DataServicesLogonScript_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/aks/DR/ARM/artifacts/DataServicesLogonScript.ps1) PowerShell logon script will start it's run.
+- At first login, as mentioned in the "Automation Flow" section above, the [_DataServicesLogonScript_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/aks/DR/ARM/artifacts/DataServicesLogonScript.ps1) PowerShell logon script will start it's run.
 
 - Let the script to run its course and **do not close** the PowerShell session, this will be done for you once completed. Once the script will finish it's run, the logon script PowerShell session will be closed, the Windows wallpaper will change and both the Azure Arc Data Controller and SQL Managed Instance will be deployed on the cluster and be ready to use.
 

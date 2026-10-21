@@ -99,14 +99,14 @@ Microsoft Sentinel uses the Log Analytics agent to collect Windows and Linux ser
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
-- You will need to create a dedicated Log Analytics workspace and enable the Microsoft Sentinel solution on the top of it. For that you can use this [ARM template](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/azuresentinel/arm/sentinel-template.json) that will create a new Log Analytics Workspace and define the Microsoft Sentinel solution and enable it for the workspace. To automate the deployment edit the ARM template [parameters file](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/azuresentinel/arm/sentinel-template.parameters.json), provide a name and location for your workspace:
+- You will need to create a dedicated Log Analytics workspace and enable the Microsoft Sentinel solution on the top of it. For that you can use this [ARM template](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/azuresentinel/arm/sentinel-template.json) that will create a new Log Analytics Workspace and define the Microsoft Sentinel solution and enable it for the workspace. To automate the deployment edit the ARM template [parameters file](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/azuresentinel/arm/sentinel-template.parameters.json), provide a name and location for your workspace:
 
     ![Screenshot showing Azure ARM template](./05.png)
 
-- To deploy the ARM template, navigate to the [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/azuresentinel/arm) and run the below command:
+- To deploy the ARM template, navigate to the [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/azuresentinel/arm) and run the below command:
 
   ```shell
   az deployment group create --resource-group <Name of the Azure resource group> \

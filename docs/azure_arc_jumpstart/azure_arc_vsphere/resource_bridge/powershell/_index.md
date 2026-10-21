@@ -17,7 +17,7 @@ The following Jumpstart scenario will guide you on how to use the provided Power
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - Create Azure service principal (SP)

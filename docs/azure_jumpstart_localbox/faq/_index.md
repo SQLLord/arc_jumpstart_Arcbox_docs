@@ -14,7 +14,7 @@ Jumpstart LocalBox is a turnkey solution that provides a complete sandbox for ex
 
 ## What is required to deploy LocalBox?
 
-LocalBox deployment requires a user with Owner role-based access control (RBAC) on an Azure subscription and can be deployed using Azure Bicep. The assignment needs to be without any [conditions](https://learn.microsoft.com/azure/role-based-access-control/delegate-role-assignments-portal?tabs=condition-editor) possibly constraining the Owner role. A Managed Identity is provisioned by the Bicep template to authenticate to Azure in the automation scripts that deploy and configure LocalBox features. You can view how the Managed Identity is used by exploring the LocalBox code on our [public GitHub repository](https://github.com/microsoft/azure_arc).
+LocalBox deployment requires a user with Owner role-based access control (RBAC) on an Azure subscription and can be deployed using Azure Bicep. The assignment needs to be without any [conditions](https://learn.microsoft.com/azure/role-based-access-control/delegate-role-assignments-portal?tabs=condition-editor) possibly constraining the Owner role. A Managed Identity is provisioned by the Bicep template to authenticate to Azure in the automation scripts that deploy and configure LocalBox features. You can view how the Managed Identity is used by exploring the LocalBox code on our [public GitHub repository](https://github.com/SQLLord/arc_jumpstart_arcbox).
 
 ## What Azure regions can LocalBox be deployed to?
 
@@ -59,4 +59,4 @@ LocalBox uses the 24H2 build of the [Azure Local OS](https://learn.microsoft.com
 
 ## Where can I go if I have trouble deploying or using LocalBox?
 
-If you're stuck, please [submit an issue](https://github.com/microsoft/azure_arc/issues/new/choose) on the Jumpstart GitHub repository and the Jumpstart team will try to assist you.
+If you're stuck, please [submit an issue](https://github.com/SQLLord/arc_jumpstart_arcbox/issues/new/choose) on the Jumpstart GitHub repository and the Jumpstart team will try to assist you.

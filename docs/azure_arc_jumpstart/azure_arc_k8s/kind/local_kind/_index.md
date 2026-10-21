@@ -15,7 +15,7 @@ The following Jumpstart scenario will guide you on how to use [kind](https://kin
 * Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 * [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -126,7 +126,7 @@ The following Jumpstart scenario will guide you on how to use [kind](https://kin
   * Navigate to the folder that has the kind cluster definition.
 
   ```shell
-  cd azure_arc/azure_arc_k8s_jumpstart/kind
+  cd arc_jumpstart_arcbox/azure_arc_k8s_jumpstart/kind
   ```
 
   * Create the kind cluster. We are using a configuration file called `kind_cluster.yaml` to specify our cluster configuration. This will create a 3 node cluster, with 1 master node and 2 worker nodes.

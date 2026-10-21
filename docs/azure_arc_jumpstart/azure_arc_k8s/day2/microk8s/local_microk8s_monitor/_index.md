@@ -19,7 +19,7 @@ in this scenario, you will hook the microK8s cluster to Azure Monitor by deployi
 * Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 * [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -63,7 +63,7 @@ in this scenario, you will hook the microK8s cluster to Azure Monitor by deployi
 
 ## Azure Monitor for Containers Integration
 
-* Retrieve either the shell and PowerShell scripts [provided](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/microk8s/azure_monitor).
+* Retrieve either the shell and PowerShell scripts [provided](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/microk8s/azure_monitor).
 
 * Before integrating the cluster with Azure Monitor for Containers, click on the "Insights (preview)" blade for the connected Arc cluster to show how the cluster is not currently being monitored.
 

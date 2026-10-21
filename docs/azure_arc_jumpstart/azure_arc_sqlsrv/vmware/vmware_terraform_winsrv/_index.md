@@ -17,7 +17,7 @@ By the end of the guide, you will have a VMware vSphere VM installed with Window
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -81,7 +81,7 @@ By the end of the guide, you will have a VMware vSphere VM installed with Window
 
 Before using the below guide to deploy a Windows Server VM and connect it to Azure Arc, a VMware vSphere Template is required. [The following README](../../vmware/vmware_terraform_winsrv/) will instruct you how to easily create such a template using VMware vSphere 6.5 and above.
 
-> **Note:** The Terraform plan uses the *remote-exec* provisioner which uses the WinRM protocol to copy and execute the required Azure Arc script. To allow WinRM connectivity to the VM, run the [*allow_winrm*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/vmware/winsrv/terraform/scripts/allow_winrm.ps1) PowerShell script on your VM before converting it to template.
+> **Note:** The Terraform plan uses the *remote-exec* provisioner which uses the WinRM protocol to copy and execute the required Azure Arc script. To allow WinRM connectivity to the VM, run the [*allow_winrm*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/vmware/winsrv/terraform/scripts/allow_winrm.ps1) PowerShell script on your VM before converting it to template.
 
 > **Note:** If you already have a Windows Server VM template it is still recommended to use the guide as a reference.
 
@@ -91,7 +91,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 1. User is exporting the Terraform environment variables (1-time export) which are being used throughout the deployment.
 
-2. User is executing the Terraform plan which will deploy the VM as well as generate and execute the [*sql.ps1*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/vmware/winsrv/terraform/scripts/sql.ps1.tmpl) script. This script will:
+2. User is executing the Terraform plan which will deploy the VM as well as generate and execute the [*sql.ps1*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/vmware/winsrv/terraform/scripts/sql.ps1.tmpl) script. This script will:
 
     1. Install Azure CLI, Azure PowerShell module and SQL Server Management Studio (SSMS) [Chocolatey  packages](https://chocolatey.org/).
 
@@ -153,7 +153,7 @@ Before executing the Terraform plan, you must set the environment variables whic
     Set-Item -Path env:TF_VAR_servicePrincipalAppId
     ```
 
-    > **Note:** Use the Terraform plan [_variables.tf_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/vmware/winsrv/terraform/variables.tf) file for more details around VMware vSphere vars structure if needed.
+    > **Note:** Use the Terraform plan [_variables.tf_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/vmware/winsrv/terraform/variables.tf) file for more details around VMware vSphere vars structure if needed.
 
     ![Screenshot of environment variables exporting in shell](./01.jpg)
 

@@ -19,7 +19,7 @@ By the end of this scenario, you will have an EKS cluster deployed with an Azure
 - Clone the Arc Jumpstart GitHub repository
 
   ```shell
-  git clone https://github.com/microsoft/azure_arc.git
+  git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
   ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -146,11 +146,11 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 - User is editing the Terraform runtime environment variables in the _terraform.tfvars_ file (1-time edit). The variables are being used throughout the deployment.
 
-- [Screenshot showing creating the main Terraform plan](https://github.com/microsoft/azure_arc/tree/main/azure_arc_data_jumpstart/eks/terraform/main.tf) will initiate the deployment of the other modules:
+- [Screenshot showing creating the main Terraform plan](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_data_jumpstart/eks/terraform/main.tf) will initiate the deployment of the other modules:
 
-  - [_clientVM_](https://github.com/microsoft/azure_arc/tree/main/azure_arc_data_jumpstart/eks/terraform/modules/clientVM/main.tf) - Deploys the client Windows VM. This is where all user interactions with the environment are made from.
-  - [_cluster_](https://github.com/microsoft/azure_arc/tree/main/azure_arc_data_jumpstart/eks/terraform/modules/cluster/main.tf) - Deploys the EKS cluster where all the Azure Arc data services will be deployed.
-  - [workers](https://github.com/microsoft/azure_arc/tree/main/azure_arc_data_jumpstart/eks/terraform/modules/workers/main.tf) - Deploys the EKS cluster's worker nodes.
+  - [_clientVM_](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_data_jumpstart/eks/terraform/modules/clientVM/main.tf) - Deploys the client Windows VM. This is where all user interactions with the environment are made from.
+  - [_cluster_](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_data_jumpstart/eks/terraform/modules/cluster/main.tf) - Deploys the EKS cluster where all the Azure Arc data services will be deployed.
+  - [workers](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_data_jumpstart/eks/terraform/modules/workers/main.tf) - Deploys the EKS cluster's worker nodes.
 
 - User remotes into client Windows VM, which automatically kicks off the DataServicesLogonScript PowerShell script that deploy and configure Azure Arc-enabled data services on the EKS cluster including the data controller and PostgreSQL.
 
@@ -198,7 +198,7 @@ As mentioned, the Terraform plan will deploy an EKS cluster, the Azure Arc Data 
 
 > **Note:** Any variables in bold are required. If any optional parameters are not provided, defaults will be used.
 
-- Now you will deploy the Terraform file. Navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_data_jumpstart/eks/terraform) and run the commands below:
+- Now you will deploy the Terraform file. Navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_data_jumpstart/eks/terraform) and run the commands below:
 
   ```shell
   terraform init
@@ -240,7 +240,7 @@ As mentioned, the Terraform plan will deploy an EKS cluster, the Azure Arc Data 
 
 - Using the decrypted password generated from the plan output, RDP the Windows instance. In case you need to get the password later, use the *`terraform output`* command to re-present the plan output.
 
-- At first login, as mentioned in the "Automation Flow" section above, the [_DataServicesLogonScript_](https://github.com/microsoft/azure_arc/tree/main/azure_arc_data_jumpstart/eks/terraform/artifacts/DataServicesLogonScript.ps1) PowerShell logon script will start it's run.
+- At first login, as mentioned in the "Automation Flow" section above, the [_DataServicesLogonScript_](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_data_jumpstart/eks/terraform/artifacts/DataServicesLogonScript.ps1) PowerShell logon script will start it's run.
 
 - Let the script to run its course and **do not close** the PowerShell session, this will be done for you once completed. Once the script will finish it's run, the logon script PowerShell session will be closed, the Windows wallpaper will change and the Azure Arc Data Controller will be deployed on the cluster and be ready to use.
 

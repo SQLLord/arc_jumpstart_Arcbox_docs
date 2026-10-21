@@ -78,12 +78,12 @@ As mentioned, this deployment will leverage ARM templates.
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - Before deploying the ARM template, login to Azure using AZ CLI with the *`az login`* command.
 
-- The deployment will use an ARM template parameters file to customize your environment. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/proxy/azuredeploy.parameters.json) file located in your local cloned repository folder. Example parameters files are located [here](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/proxy/azuredeploy.example.parameters.json). Fill out the parameters according to your environment:
+- The deployment will use an ARM template parameters file to customize your environment. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/proxy/azuredeploy.parameters.json) file located in your local cloned repository folder. Example parameters files are located [here](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/proxy/azuredeploy.example.parameters.json). Fill out the parameters according to your environment:
 
   - _`vmSize`_: Client and proxy server Azure VM size.
   - _`vmName`_: Client Azure VM name.
@@ -104,7 +104,7 @@ As mentioned, this deployment will leverage ARM templates.
   - _`deployBastion`_: boolean, true or false if you want to deploy bastion to connect to the VMs.
   - _`bastionHostName`_: Azure Bastion Host name.
 
-- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/proxy) and run the below command.
+- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/proxy) and run the below command.
 
     ```shell
     az group create --name <Name of the Azure resource group> --tags "Project=jumpstart_azure_arc_servers"
@@ -124,7 +124,7 @@ As mentioned, this deployment will leverage ARM templates.
     az deployment group create \
     --resource-group Arc-Proxy-Demo \
     --name proxy \
-    --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/proxy/azuredeploy.json \
+    --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/proxy/azuredeploy.json \
     --parameters azuredeploy.example.parameters.json
     ```
 

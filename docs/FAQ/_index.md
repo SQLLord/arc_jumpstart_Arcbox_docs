@@ -13,7 +13,7 @@ Absolutely! Arc Jumpstart is a community-driven open-source project, and contrib
 
 ## Are any of the Arc Jumpstart documents created with AI assistance?
 
-Yes, some of our documentation was created with the assistance of AI tools. Our team follows [Microsoft’s principles for AI-generated content](https://learn.microsoft.com/principles-for-ai-generated-content) and thoroughly reviews AI-assisted content to ensure it meets high standards for quality and accuracy. You can find more details in our [AI disclaimer](https://github.com/Azure/arc_jumpstart_docs/blob/main/AI_DISCLAIMER.MD).
+Yes, some of our documentation was created with the assistance of AI tools. Our team follows [Microsoft’s principles for AI-generated content](https://learn.microsoft.com/principles-for-ai-generated-content) and thoroughly reviews AI-assisted content to ensure it meets high standards for quality and accuracy. You can find more details in our [AI disclaimer](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs/blob/master/AI_DISCLAIMER.MD).
 
 ## Can I use an Azure free trial account with Arc Jumpstart?
 
@@ -92,7 +92,7 @@ Refer to the Jumpstart Drops [contribution process](../contribution_guidelines/)
 
 ### How's support and maintenance handled for Jumpstart Drops?
 
-Support and maintenance for Jumpstart Drops are managed through GitHub Issues, where bugs and feature requests can be tracked. The project follows the support approach outlined in [Arc Jumpstart Support](https://github.com/Azure/arc_jumpstart_docs/blob/main/SUPPORT.md).
+Support and maintenance for Jumpstart Drops are managed through GitHub Issues, where bugs and feature requests can be tracked. The project follows the support approach outlined in [Arc Jumpstart Support](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs/blob/master/SUPPORT.md).
 
 **Important**: _Please note that Jumpstart Drops don't come with official support or warranty, but the community is encouraged to provide assistance to the best of their ability._
 

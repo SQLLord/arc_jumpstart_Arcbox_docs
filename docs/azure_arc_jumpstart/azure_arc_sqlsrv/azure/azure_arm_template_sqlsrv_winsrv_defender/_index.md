@@ -16,7 +16,7 @@ By the end of the guide, you will have an Azure VM **JS-Client** installed with 
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -76,15 +76,15 @@ By the end of the guide, you will have an Azure VM **JS-Client** installed with 
 
 The automation for this scenario includes different PowerShell scripts executed in the following order:
 
-- [*Bootstrap.ps1*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/Bootstrap.ps1)
+- [*Bootstrap.ps1*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/Bootstrap.ps1)
 
   Executed at ARM Template deployment time as a CustomScriptExtension. This script has the following functionalities:
 
   1. Download and install pre-requisite utilities via [Chocolatey](https://chocolatey.org/).
-  2. Download the [*ArcServersLogonScript.ps1*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/ArcServersLogonScript.ps1), [*installArcAgentSQLSP.ps1*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/installArcAgentSQLSP.ps1), and [*testDefenderForSQL.ps1*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/testDefenderForSQL.ps1) scripts.
+  2. Download the [*ArcServersLogonScript.ps1*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/ArcServersLogonScript.ps1), [*installArcAgentSQLSP.ps1*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/installArcAgentSQLSP.ps1), and [*testDefenderForSQL.ps1*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/testDefenderForSQL.ps1) scripts.
 
 
-- [*ArcServersLogonScript.ps1*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/ArcServersLogonScript.ps1)
+- [*ArcServersLogonScript.ps1*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/ArcServersLogonScript.ps1)
 
   Executed upon initial login to the **JS-Client** Azure virtual machine. This script has the following functionalities:
 
@@ -96,7 +96,7 @@ The automation for this scenario includes different PowerShell scripts executed 
   6. Execute the *testDefenderForSQL.ps1* script to simulate SQL attacks.
 
 
-- [*installArcAgentSQLSP.ps1*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/installArcAgentSQLSP.ps1)
+- [*installArcAgentSQLSP.ps1*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/installArcAgentSQLSP.ps1)
 
   This is the main script and will be executed by the *ArcServersLogonScript.ps1* script at VM runtime. This script has the following functionalities:
 
@@ -107,7 +107,7 @@ The automation for this scenario includes different PowerShell scripts executed 
 To get familiar with the automation and deployment flow read the following explanation.
 
 1. User edits the ARM template parameters file (1-time edit). These parameters values are used throughout the deployment.
-2. The ARM template includes an Azure VM Custom Script Extension which will deploy the [*Bootstrap.ps1*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/Bootstrap.ps1) PowerShell Script. The script will:
+2. The ARM template includes an Azure VM Custom Script Extension which will deploy the [*Bootstrap.ps1*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/scripts/Bootstrap.ps1) PowerShell Script. The script will:
 
     - Download the *ArcServersLogonScript.ps1*, *installArcAgentSQLSP.ps1*, and *testDefenderForSQL.ps1* PowerShell scripts
     - Set local OS environment variables
@@ -132,9 +132,9 @@ As mentioned, this deployment will use an ARM Template. You will deploy a single
 
 - Before deploying the ARM template, login to Azure using AZ CLI with the *`az login`* command.
 
-- The deployment uses the ARM template parameters file. Before initiating the deployment, edit the [*azuredeploy.parameters.json*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/azuredeploy.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/azuredeploy.parameters.example.json).
+- The deployment uses the ARM template parameters file. Before initiating the deployment, edit the [*azuredeploy.parameters.json*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/azuredeploy.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/azuredeploy.parameters.example.json).
 
-Edit the [azuredeploy.parameters.json](https://github.com/microsoft/azure_arc/blob/main/azure_jumpstart_arcbox/ARM/azuredeploy.parameters.json) ARM template parameters file and supply some values for your environment.
+Edit the [azuredeploy.parameters.json](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_jumpstart_arcbox/ARM/azuredeploy.parameters.json) ARM template parameters file and supply some values for your environment.
 
 - *`spnClientId`* - Your Azure service principal id
 - *`spnClientSecret`* - Your Azure service principal secret
@@ -156,13 +156,13 @@ Edit the [azuredeploy.parameters.json](https://github.com/microsoft/azure_arc/bl
     az group create --name Arc-SQL-Defender --location "East US" --tags "Project=jumpstart_azure_arc_sql_defender"
     ```
 
-- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template) and run the following command:
+- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template) and run the following command:
 
     ```shell
     az deployment group create \
     --resource-group <Name of the Azure resource group> \
     --name <The name of this deployment> \
-    --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/azuredeploy.json \
+    --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/azuredeploy.json \
     --parameters <The *azuredeploy.parameters.json* parameters file location>
     ```
 
@@ -174,7 +174,7 @@ Edit the [azuredeploy.parameters.json](https://github.com/microsoft/azure_arc/bl
     az deployment group create \
     --resource-group Arc-SQL-Defender \
     --name arcsqldefender \
-    --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/azuredeploy.json \
+    --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_sqlsrv_jumpstart/azure/windows/defender_sql/arm_template/azuredeploy.json \
     --parameters azuredeploy.parameters.json
     ```
 

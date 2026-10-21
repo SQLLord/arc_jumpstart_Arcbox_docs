@@ -67,8 +67,8 @@ You can use the Azure portal, Azure CLI, an ARM template, PowerShell or Linux Sh
     > **Note:** The Jumpstart scenarios are designed with as much ease of use in-mind and adhering to security-related best practices whenever possible. It is optional but highly recommended to scope the service principal to a specific [Azure subscription and resource group](https://learn.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest) as well considering using a [less privileged service principal account](https://learn.microsoft.com/azure/role-based-access-control/best-practices).
 
 - In order to demonstrate the custom script extension, we will use the below Linux and Windows scripts.
-  - [*Linux*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/scripts/custom_script_linux.sh): The script will modify the message of the day (MOTD) on the operating system.
-  - [*Windows*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/scripts/custom_script_windows.ps1): The script will install Windows Terminal, Microsoft Edge, 7zip and Visual Studio Code [Chocolatey ](https://chocolatey.org/) packages on the VM.
+  - [*Linux*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/scripts/custom_script_linux.sh): The script will modify the message of the day (MOTD) on the operating system.
+  - [*Windows*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/scripts/custom_script_windows.ps1): The script will install Windows Terminal, Microsoft Edge, 7zip and Visual Studio Code [Chocolatey ](https://chocolatey.org/) packages on the VM.
 
 ## Deployment Options and Automation Flow
 
@@ -92,7 +92,7 @@ The steps below will help you get familiar with the automation and deployment fl
   - _`Resource Group`_: Azure Resource Group where your Azure Arc-enabled server is registered
   - _`Location`_: Azure region where your Azure Arc-enabled server is connected to
   - _`VM Name`_: name of your Azure Arc-enabled server
-  - _`File Uris`_: for Windows use the following [PowerShell script](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/scripts/custom_script_windows.ps1).
+  - _`File Uris`_: for Windows use the following [PowerShell script](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/scripts/custom_script_windows.ps1).
   - _`Command to execute:`_ provide `./custom_script_linux.sh`
 
   ![Screenshot showing Azure portal deployment](./03.png)
@@ -104,7 +104,7 @@ The steps below will help you get familiar with the automation and deployment fl
   - _`Resource Group`_: Azure Resource Group where your Azure Arc-enabled server is registered
   - _`Location`_: Azure region where your Azure Arc-enabled server is connected to
   - _`VM Name`_: name of your Azure Arc-enabled server
-  - _`File Uris`_: for Linux use the following [Shell script](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/scripts/custom_script_linux.sh).
+  - _`File Uris`_: for Linux use the following [Shell script](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/scripts/custom_script_linux.sh).
   - _`Command to execute`_: provide ./custom_script_linux.sh
 
   ![Screenshot showing Azure portal deployment](./05.png)
@@ -118,10 +118,10 @@ As mentioned, this deployment will leverage ARM templates.
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
-- Edit the extensions parameters file for [*Windows*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/extensions/arm/customscript-templatewindows.parameters.json) or for [*Linux*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/extensions/arm/customscript-templatelinux.parameters.json)
+- Edit the extensions parameters file for [*Windows*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/extensions/arm/customscript-templatewindows.parameters.json) or for [*Linux*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/extensions/arm/customscript-templatelinux.parameters.json)
 
    ![Screenshot parameters file](./07.png)
 
@@ -136,8 +136,8 @@ As mentioned, this deployment will leverage ARM templates.
     ![Screenshot Azure region](./09.png)
 
   - A public Uri for the script that you would like to run on the servers, in this case use the URL for the script in raw format.
-    - For Windows: [Public Uri](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/scripts/custom_script_windows.ps1)
-    - For Linux: [Public Uri](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/scripts/custom_script_linux.sh)
+    - For Windows: [Public Uri](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/scripts/custom_script_windows.ps1)
+    - For Linux: [Public Uri](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/scripts/custom_script_linux.sh)
 
   - To run either script, use the below commands:
 
@@ -153,7 +153,7 @@ As mentioned, this deployment will leverage ARM templates.
          ./custom_script_linux.sh
          ```
 
-- To deploy the ARM template for Linux or Windows, navigate to the [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/extensions/arm) and run the below command with the templates that match your operating system:
+- To deploy the ARM template for Linux or Windows, navigate to the [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/extensions/arm) and run the below command with the templates that match your operating system:
 
     ```shell
     az deployment group create --resource-group <Name of the Azure resource group> \

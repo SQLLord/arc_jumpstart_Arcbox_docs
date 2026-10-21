@@ -87,7 +87,7 @@ The steps below will help you get familiar with the automation and deployment fl
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - Edit the variables section on the script to match your environment. You will need to provide:
@@ -103,7 +103,7 @@ The steps below will help you get familiar with the automation and deployment fl
   - subscription_id: your Azure subscription ID.
   - tenantId: your Microsoft Entra ID tenant.
 
-- To run the PowerShell script, navigate to the [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/datadog/) and run the below command:
+- To run the PowerShell script, navigate to the [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/datadog/) and run the below command:
 
   ```powershell
     .\datadog.ps1

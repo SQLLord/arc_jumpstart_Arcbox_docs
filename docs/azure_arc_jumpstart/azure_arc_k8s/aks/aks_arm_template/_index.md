@@ -17,7 +17,7 @@ The following Jumpstart scenario will guide you on how to use the provided [Azur
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
   
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -111,18 +111,18 @@ For you to get familiar with the automation and deployment flow, below is an exp
   az aks get-versions -l "<Your Azure Region>"
   ```
 
-- The deployment is using the template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks/arm_template/azuredeploy.parameters.json) file to match your environment and using one of the available Kubernetes Versions from the previous step.
+- The deployment is using the template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks/arm_template/azuredeploy.parameters.json) file to match your environment and using one of the available Kubernetes Versions from the previous step.
 
   ![Screenshot of Azure ARM template](./03.png)
 
-- To deploy the ARM template, navigate to the [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/aks/arm_template) and run the below command:
+- To deploy the ARM template, navigate to the [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/aks/arm_template) and run the below command:
 
   ```shell
   az group create --name <Name of the Azure resource group> --location <Azure Region>
   az deployment group create \
   --resource-group <Name of the Azure resource group> \
   --name <The name of this deployment> \
-  --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/aks/arm_template/azuredeploy.json \
+  --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/aks/arm_template/azuredeploy.json \
   --parameters <The _azuredeploy.parameters.json_ parameters file location>
   ```
 
@@ -133,7 +133,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
   az deployment group create \
   --resource-group Arc-AKS-Demo \
   --name arcaksdemo01 \
-  --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/aks/arm_template/azuredeploy.json \
+  --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/aks/arm_template/azuredeploy.json \
   --parameters azuredeploy.parameters.json
   ```
 
@@ -147,7 +147,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 ## Connecting to Azure Arc
 
-- Now that you have a running AKS cluster, edit the environment variables section in the included [*az_connect_aks*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks/arm_template/scripts/az_connect_aks.sh) shell script.
+- Now that you have a running AKS cluster, edit the environment variables section in the included [*az_connect_aks*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks/arm_template/scripts/az_connect_aks.sh) shell script.
 
   ![Screenshot of az_connect_aks shell script](./06.png)
 
@@ -159,7 +159,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
   ![Screenshot of Azure Cloud Shell button in Visual Studio Code](./08.png)
 
-- After editing the environment variables in the [az_connect_aks](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks/arm_template/scripts/az_connect_aks.sh) shell script to match your parameters, save the file and then upload it to the Cloud Shell environment and run it using the _`. ./az_connect_aks.sh`_ command.
+- After editing the environment variables in the [az_connect_aks](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks/arm_template/scripts/az_connect_aks.sh) shell script to match your parameters, save the file and then upload it to the Cloud Shell environment and run it using the _`. ./az_connect_aks.sh`_ command.
 
   > **Note:** The extra dot is due to the script having an *export* function and needs to have the vars exported in the same shell session as the other commands.
 

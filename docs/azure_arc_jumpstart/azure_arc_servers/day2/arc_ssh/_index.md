@@ -26,7 +26,7 @@ The following Jumpstart scenario will guide you on how to enable [SSH access to 
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -102,7 +102,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 ## Deployment
 
-- To run the automation, navigate to the [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/ssh) and edit the environment section of the [shell script](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/ssh/enable_ssh.sh)
+- To run the automation, navigate to the [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/ssh) and edit the environment section of the [shell script](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/ssh/enable_ssh.sh)
 
   - _`subscription`_: your Azure subscription ID.
   - _`resourceGroup`_: Resource Group where your Azure Arc-enabled server is registered to.

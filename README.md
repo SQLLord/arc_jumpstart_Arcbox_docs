@@ -1,4 +1,4 @@
-[![Stale Branches](https://github.com/Azure/arc_jumpstart_docs/actions/workflows/stale-branches.yml/badge.svg)](https://github.com/Azure/arc_jumpstart_docs/actions/workflows/stale-branches.yml) [![Check Broken Links](https://github.com/Azure/arc_jumpstart_docs/actions/workflows/url-checker.yml/badge.svg?branch=main)](https://github.com/Azure/arc_jumpstart_docs/actions/workflows/url-checker.yml)
+[![Stale Branches](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs/actions/workflows/stale-branches.yml/badge.svg)](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs/actions/workflows/stale-branches.yml) [![Check Broken Links](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs/actions/workflows/url-checker.yml/badge.svg?branch=master)](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs/actions/workflows/url-checker.yml)
 
 # ⚡ Arc Jumpstart documentation
 
@@ -34,16 +34,16 @@ The following branches are currently maintained:
 
 | Branch                                                       | Website                    | Description                                                                                      |
 | ------------------------------------------------------------ | -------------------------- | ------------------------------------------------------------------------------------------------ |
-| [main](https://github.com/Azure/arc_jumpstart_docs) (primary)               | https://jumpstart.azure.com/       | Latest Arc Jumpstart release documentation. This is the latest documentation deployed to the production slot. |
-| [canary](https://github.com/Azure/arc_jumpstart_docs/tree/canary) (canary) | https://bvt.test.arcjumpstart.azure.com/ | Pre-release documentation. Doc updates should be merged to the canary branch for preview validation before merging to the main branch. |
+| [main](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs) (primary)               | https://jumpstart.azure.com/       | Latest Arc Jumpstart release documentation. This is the latest documentation deployed to the production slot. |
+| [canary](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs/tree/master) (canary) | https://bvt.test.arcjumpstart.azure.com/ | Pre-release documentation. Doc updates should be merged to the canary branch for preview validation before merging to the main branch. |
 
 ## 📥 Cloning the repositories
 
-To contribute, you'll likely need to clone both this repository and the [source code repository](https://github.com/Azure/arc_jumpstart_docs). Use the following commands:
+To contribute, you'll likely need to clone both this repository and the [source code repository](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs). Use the following commands:
 
 ```bash
-git clone https://github.com/Azure/arc_jumpstart_docs.git
-git clone https://github.com/microsoft/azure_arc.git
+git clone https://github.com/SQLLord/arc_jumpstart_Arcbox_docs.git
+git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
 ```
 
 As we continuously improve and expand Arc Jumpstart, we recommend keeping your local clones of the repositories up-to-date. You can do this by pulling the latest changes from the main branch:
@@ -72,7 +72,7 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 This repository uses [vale.sh](https://vale.sh/) to help tech writers and contributors adhere to Microsoft's writing styling guidelines. **Vale** is a command-line tool that allows you to check your writing for grammar and spelling errors against a set of style rules. 
 
-For more information about Vale configuration, local usage and GitHub CI actions, check [Wiki - Vale Integration](https://github.com/Azure/arc_jumpstart_docs/wiki/Vale.sh-Integration).
+For more information about Vale configuration, local usage and GitHub CI actions, check [Wiki - Vale Integration](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs/wiki/Vale.sh-Integration).
 
 ## 📑 Repository Policies
 

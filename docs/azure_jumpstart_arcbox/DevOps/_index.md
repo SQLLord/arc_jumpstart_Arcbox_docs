@@ -221,7 +221,7 @@ $customLocationRPOID=(az ad sp list --filter "displayname eq 'Custom Locations R
 - Clone the Arc Jumpstart GitHub repository
 
   ```shell
-  git clone https://github.com/microsoft/azure_arc.git
+  git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
   ```
 
 - Upgrade to latest Bicep version
@@ -230,7 +230,7 @@ $customLocationRPOID=(az ad sp list --filter "displayname eq 'Custom Locations R
   az bicep upgrade
   ```
 
-- Edit the [main.bicepparam](https://github.com/microsoft/azure_arc/blob/main/azure_jumpstart_arcbox/bicep/main.bicepparam) template parameters file and supply values for your environment.
+- Edit the [main.bicepparam](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_jumpstart_arcbox/bicep/main.bicepparam) template parameters file and supply values for your environment.
 
   | Name                    | Type     | Description                                                                                                           | Default |
   |-------------------------|----------|-----------------------------------------------------------------------------------------------------------------------|---------|
@@ -250,7 +250,7 @@ $customLocationRPOID=(az ad sp list --filter "displayname eq 'Custom Locations R
 
 - (optional) to use Spot VM instance for the _ArcBox-Client_ VM, add a parameter called _`enableAzureSpotPricing`_ set to true.
 
-- Now you will deploy the Bicep file. Navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_jumpstart_arcbox/bicep) and run the below command:
+- Now you will deploy the Bicep file. Navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_jumpstart_arcbox/bicep) and run the below command:
 
 ### Bicep deployment option 1: Azure CLI
 

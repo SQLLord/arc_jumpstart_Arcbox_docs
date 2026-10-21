@@ -87,7 +87,7 @@ This scenario uses automation to configure the Video Indexer solution. The autom
 
 - User edits the Bicep file parameters file (1-time edit). These parameter values are used throughout the deployment.
 
-- User deploys the [main.bicep file](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_vi/bicep/main.bicep) to configure the following resources:
+- User deploys the [main.bicep file](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_vi/bicep/main.bicep) to configure the following resources:
 
   - _Virtual Network_ - Virtual Network for Windows Server Azure VM.
   - _Network Interface_ - Network Interface for Azure Windows Server VM.
@@ -98,7 +98,7 @@ This scenario uses automation to configure the Video Indexer solution. The autom
   - _Media Services account_ - Media services account associated with the Video Indexer account.
   - _Storage account_ - Storage account backing Media Services account.
 
-- User remotes into client Windows VM, which automatically kicks off the [_LogonScript_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_vi/artifacts/LogonScript.ps1) PowerShell script to:
+- User remotes into client Windows VM, which automatically kicks off the [_LogonScript_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_vi/artifacts/LogonScript.ps1) PowerShell script to:
   - Create the AKS Edge Essentials cluster in the Windows Server VM.
   - Onboard the AKS Edge Essentials cluster to Azure Arc.
   - Deploy Video Indexer solution as Arc extension on the AKS Edge Essentials cluster.
@@ -110,12 +110,12 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - Before deploying the ARM template, login to Azure using Azure CLI with the *`az login`* command.
 
-- The deployment uses the Bicep parameters file. Before initiating the deployment, edit the [_main.parameters.json_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_vi/bicep/main.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_vi/bicep/main.parameters.example.json).
+- The deployment uses the Bicep parameters file. Before initiating the deployment, edit the [_main.parameters.json_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_vi/bicep/main.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_vi/bicep/main.parameters.example.json).
 
   - _`spnClientId`_ - Your Azure service principal id.
   - _`spnClientSecret`_ - Your Azure service principal secret.
@@ -123,7 +123,7 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
   - _`windowsAdminUsername`_ - Username for the Windows Client VM.
   - _`windowsAdminPassword`_ - Password for the Windows Client VM.
 
-- To deploy the Bicep file, navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_vi/bicep/) and run the below command:
+- To deploy the Bicep file, navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_vi/bicep/) and run the below command:
 
     ```shell
     az group create --name <Name of the Azure resource group> --location <Azure region>

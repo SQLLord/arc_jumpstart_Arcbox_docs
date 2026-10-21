@@ -79,7 +79,7 @@ Take note that Copilot can infer meaning and context from the data in the spread
 
 ![Screenshot of Copilot response on coffee roasting](./img/10-copilot-response-coffee.png)
 
-> **Note**: For applicable prompt examples relevant for this scenario, please refer to the ["Prompt examples"](https://github.com/Azure/arc_jumpstart_docs/blob/canary/docs/azure_jumpstart_ag/contoso_hypermarket/predictive_analytics/predictive_analytics_appendix.md#prompt-examples) section in the Predictive Analytics appendix file.
+> **Note**: For applicable prompt examples relevant for this scenario, please refer to the ["Prompt examples"](https://github.com/SQLLord/arc_jumpstart_Arcbox_docs/blob/master/docs/azure_jumpstart_ag/contoso_hypermarket/predictive_analytics/predictive_analytics_appendix.md#prompt-examples) section in the Predictive Analytics appendix file.
 
 ## Next steps
 

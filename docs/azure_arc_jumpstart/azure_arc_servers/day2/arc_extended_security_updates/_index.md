@@ -69,7 +69,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - Edit the parameter file to match your environment. You will need to provide:
@@ -88,7 +88,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
   ![Screenshot of Parameters file](./01.png)
 
-- To run the automation, navigate to the [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/esu/bicep). From the deployment folder run the below command:
+- To run the automation, navigate to the [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/esu/bicep). From the deployment folder run the below command:
 
   ```shell
     az group create --name "<resource-group-name>"  --location "<preferred-location>"

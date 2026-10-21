@@ -106,10 +106,10 @@ For you to get familiar with the automation and deployment flow, below is an exp
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
-- To run the automation, navigate to the [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/automanage_builtin_profile/) and edit [the parameters file](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/automanage_builtin_profile/azuredeploy.parameters.json)
+- To run the automation, navigate to the [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/automanage_builtin_profile/) and edit [the parameters file](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/automanage_builtin_profile/azuredeploy.parameters.json)
   - _`machineName`_: Name of your Azure Arc-enabled server as it is shown in the Azure portal.
   - _`configurationProfile`_: refers to the environment of your Azure Arc-enabled server as Azure Automanage has different built-in profiles. Values can be:
     - _`Production environment`_: "/providers/Microsoft.Automanage/bestPractices/AzureBestPracticesProduction"

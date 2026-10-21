@@ -15,7 +15,7 @@ The following Jumpstart scenario will guide you on how to use the provided [Azur
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -105,11 +105,11 @@ This Jumpstart scenario provides multiple paths for deploying and configuring re
 
 For you to get familiar with the automation and deployment flow, below is an explanation.
 
-- User provides the ARM template parameter values, either via the portal or editing the [ARM template parameters file](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aro/arm_template/azuredeploy.parameters.json) (1-time edit). These parameters values are being used throughout the deployment.
+- User provides the ARM template parameter values, either via the portal or editing the [ARM template parameters file](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aro/arm_template/azuredeploy.parameters.json) (1-time edit). These parameters values are being used throughout the deployment.
 
-- Main [_azuredeploy_ ARM template](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aro/arm_template/azuredeploy.json) will initiate the deployment of the Azure Red Hat OpenShift cluster and the virtual network.
+- Main [_azuredeploy_ ARM template](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aro/arm_template/azuredeploy.json) will initiate the deployment of the Azure Red Hat OpenShift cluster and the virtual network.
 
-- User edits the environment variables section in the in the [az_connect_aro.sh script file](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aro/arm_template/scripts/az_connect_aro.sh) (1-time edit). These variables' values will be used throughout the deployment.
+- User edits the environment variables section in the in the [az_connect_aro.sh script file](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aro/arm_template/scripts/az_connect_aro.sh) (1-time edit). These variables' values will be used throughout the deployment.
 
 - At a high level, the script will then perform the following tasks:
   - Install the required Azure Arc-enabled Kubernetes required Azure CLI extension
@@ -127,18 +127,18 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 ## Deployment Option 2: ARM template with Azure CLI
 
-- The deployment is using the template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aro/arm_template/azuredeploy.parameters.json) file to match your environment.
+- The deployment is using the template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aro/arm_template/azuredeploy.parameters.json) file to match your environment.
 
   ![Screenshot of Azure ARM template](./05.png)
 
-  To deploy the ARM template, navigate to the [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/aro/arm_template) and run the below command:
+  To deploy the ARM template, navigate to the [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/aro/arm_template) and run the below command:
 
   ```shell
   az group create --name <Name of the Azure resource group> --location <Azure Region>
   az deployment group create \
   --resource-group <Name of the Azure resource group> \
   --name <The name of this deployment> \
-  --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/aro/arm_template/azuredeploy.json \
+  --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/aro/arm_template/azuredeploy.json \
   --parameters <The _azuredeploy.parameters.json_ parameters file location>
   ```
 
@@ -149,7 +149,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
   az deployment group create \
   --resource-group Arc-Aro-Demo \
   --name arcarodemo01 \
-  --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/aro/arm_template/azuredeploy.json \
+  --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/aro/arm_template/azuredeploy.json \
   --parameters azuredeploy.parameters.json
   ```
 
@@ -163,7 +163,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 ## Connecting to Azure Arc
 
-- Now that you have a running Azure Red Hat OpenShift cluster, edit the environment variables section in the included [az_connect_aro](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aro/arm_template/scripts/az_connect_aro.sh) shell script.
+- Now that you have a running Azure Red Hat OpenShift cluster, edit the environment variables section in the included [az_connect_aro](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aro/arm_template/scripts/az_connect_aro.sh) shell script.
 
   ![Screenshot of az_connect_aro shell script](./08.png)
 
@@ -171,7 +171,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
   ![Screenshot of Azure Cloud Shell button in Visual Studio Code](./09.png)
 
-- After editing the environment variables in the [*az_connect_aro*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aro/arm_template/scripts/az_connect_aro.sh) shell script to match your parameters, save the file and then upload it to the Cloud Shell environment and run it using the _`. ./az_connect_aro.sh`_ command.
+- After editing the environment variables in the [*az_connect_aro*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aro/arm_template/scripts/az_connect_aro.sh) shell script to match your parameters, save the file and then upload it to the Cloud Shell environment and run it using the _`. ./az_connect_aro.sh`_ command.
 
   > **Note:** The extra dot is due to the script having an *export* function and needs to have the vars exported in the same shell session as the other commands.
 

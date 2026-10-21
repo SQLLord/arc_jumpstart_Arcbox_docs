@@ -17,7 +17,7 @@ The following Jumpstart scenario will guide you on how to enable [Azure Policy f
 * Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 * [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -103,7 +103,7 @@ The following Jumpstart scenario will guide you on how to enable [Azure Policy f
 
 ## Azure Policy for Azure Arc Connected Cluster Integration
 
-* In order to keep your local environment clean and untouched, we will use [Google Cloud Shell](https://cloud.google.com/shell) to run the [*gke_policy_onboarding*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/gke/azure_policy/gke_policy_onboarding.sh) shell script against the GKE connected cluster.
+* In order to keep your local environment clean and untouched, we will use [Google Cloud Shell](https://cloud.google.com/shell) to run the [*gke_policy_onboarding*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/gke/azure_policy/gke_policy_onboarding.sh) shell script against the GKE connected cluster.
 
 * Edit the environment variables in the script to match your environment parameters, upload it to the Cloud Shell environment and run it using the *`. ./gke_policy_onboarding.sh`* command. **If you decided to use the 'Policy Insights Data Writer (Preview)' role assignment as described in the perquisites section, make sure to use it's respective *appId*, *password* and *tenantId***.
 

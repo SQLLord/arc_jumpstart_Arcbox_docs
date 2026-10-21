@@ -13,7 +13,7 @@ Occasionally deployments of LocalBox may fail at various stages. Common reasons 
 - Corruption when downloading LocalBox VHD files can interrupt deployments. LocalBox should automatically halt if this occurs. Re-running the PowerShell script at _C:\LocalBox\LocalBoxLogonScript.ps1_ can often repair this issue.
 - RBAC permissions - check that Owner permissions is assigned to the user performing the deployment, without any [conditions](https://learn.microsoft.com/azure/role-based-access-control/delegate-role-assignments-portal?tabs=condition-editor) possibly constraining the Owner role.
 
-If you have issues that you cannot resolve when deploying LocalBox please submit an issue on the [GitHub repo](https://github.com/microsoft/azure_arc/issues)
+If you have issues that you cannot resolve when deploying LocalBox please submit an issue on the [GitHub repo](https://github.com/SQLLord/arc_jumpstart_arcbox/issues)
 
 ## Verifying Deployment with Pester Tests
 

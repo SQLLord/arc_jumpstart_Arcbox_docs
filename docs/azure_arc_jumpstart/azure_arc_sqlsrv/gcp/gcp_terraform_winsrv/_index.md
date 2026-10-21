@@ -17,7 +17,7 @@ By the end of the guide, you will have a GCP VM instance installed with Windows 
 * Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 * [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -135,7 +135,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
     1. Create an Administrator Windows user account and enabling WinRM on the VM
 
-    2. Generate and execute the [*sql.ps1*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_sqlsrv_jumpstart/gcp/winsrv/terraform/scripts/sql.ps1.tmpl) script. This script will:
+    2. Generate and execute the [*sql.ps1*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_sqlsrv_jumpstart/gcp/winsrv/terraform/scripts/sql.ps1.tmpl) script. This script will:
 
         1. Install Azure CLI, Azure PowerShell module and SQL Server Management Studio (SSMS) [Chocolatey  packages](https://chocolatey.org/).
 

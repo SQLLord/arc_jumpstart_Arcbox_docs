@@ -15,7 +15,7 @@ The following Jumpstart scenario will guide you on how to use the provided [Azur
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -118,16 +118,16 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 ## Deployment Option 2: ARM template with Azure CLI
 
-The deployment is using the template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/rancher_k3s/azure/arm_template/azuredeploy.parameters.json) file to include your public SSH key, the Ubuntu OS username as well as the appId, password and tenant generated from the service principal creation.  
+The deployment is using the template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/rancher_k3s/azure/arm_template/azuredeploy.parameters.json) file to include your public SSH key, the Ubuntu OS username as well as the appId, password and tenant generated from the service principal creation.  
 
-To deploy the ARM template, navigate to the [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/rancher_k3s/azure/arm_template) and run the below command:
+To deploy the ARM template, navigate to the [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/rancher_k3s/azure/arm_template) and run the below command:
 
 ```shell
 az group create --name <Name of the Azure resource group> --location <Azure Region>
 az deployment group create \
 --resource-group <Name of the Azure resource group> \
 --name <The name of this deployment> \
---template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/rancher_k3s/azure/arm_template/azuredeploy.json \
+--template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/rancher_k3s/azure/arm_template/azuredeploy.json \
 --parameters <The _azuredeploy.parameters.json_ parameters file location>
 ```
 
@@ -138,7 +138,7 @@ az group create --name Arc-K3s-Demo --location "East US 2"
 az deployment group create \
 --resource-group Arc-K3s-Demo \
 --name arck3sdemo01 \
---template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/rancher_k3s/azure/arm_template/azuredeploy.json \
+--template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/rancher_k3s/azure/arm_template/azuredeploy.json \
 --parameters azuredeploy.parameters.json
 ```
 

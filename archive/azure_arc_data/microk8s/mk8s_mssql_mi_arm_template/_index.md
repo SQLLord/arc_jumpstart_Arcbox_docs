@@ -17,7 +17,7 @@ By the end of this scenario, you will have a Microk8s Kubernetes cluster deploye
 - Clone the Arc Jumpstart GitHub repository
 
   ```shell
-  git clone https://github.com/microsoft/azure_arc.git
+  git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
   ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -93,21 +93,21 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 - User is editing the ARM template parameters file (1-time edit) and export the Azure Custom Location Resource Provider ([RP](https://learn.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types)) Object ID (OID) variable to use it as a parameter. These parameters values are being used throughout the deployment.
 
-- Main [_azuredeploy_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/azuredeploy.json) ARM template will initiate **five** linked ARM templates:
+- Main [_azuredeploy_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/azuredeploy.json) ARM template will initiate **five** linked ARM templates:
 
-  - [_VNET_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/VNET.json) - Deploys a Virtual Network with a single subnet - used by our VMs.
-  - [_ubuntuMicrok8s_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/ubuntuMicrok8s.json) - Deploys an Ubuntu Linux VM which will have Microk8s installed from the Snap Store.
-  - [_clientVm_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/clientVm.json) - Deploys the Client Windows VM. This is where all user interactions with the environment are made from.
-  - [_mgmtStagingStorage_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/mgmtStagingStorage.json) - Used for staging files in automation scripts and [kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/).
-  - [_logAnalytics_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/logAnalytics.json) - Deploys Azure Log Analytics workspace to support Azure Arc-enabled data services logs upload.
+  - [_VNET_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/VNET.json) - Deploys a Virtual Network with a single subnet - used by our VMs.
+  - [_ubuntuMicrok8s_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/ubuntuMicrok8s.json) - Deploys an Ubuntu Linux VM which will have Microk8s installed from the Snap Store.
+  - [_clientVm_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/clientVm.json) - Deploys the Client Windows VM. This is where all user interactions with the environment are made from.
+  - [_mgmtStagingStorage_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/mgmtStagingStorage.json) - Used for staging files in automation scripts and [kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/).
+  - [_logAnalytics_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/logAnalytics.json) - Deploys Azure Log Analytics workspace to support Azure Arc-enabled data services logs upload.
 
-- User remotes into Client Windows VM, which automatically kicks off the [_DataServicesLogonScript_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/artifacts/DataServicesLogonScript.ps1) PowerShell script that deploys and configure Azure Arc-enabled data services on the Microk8s Kubernetes cluster - including the data controller.
+- User remotes into Client Windows VM, which automatically kicks off the [_DataServicesLogonScript_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/artifacts/DataServicesLogonScript.ps1) PowerShell script that deploys and configure Azure Arc-enabled data services on the Microk8s Kubernetes cluster - including the data controller.
 
 ## Deployment
 
 As mentioned, this deployment will leverage ARM templates. You will deploy a single template that will initiate the entire automation for this scenario.
 
-- The deployment is using the ARM template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/azuredeploy.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/azuredeploy.parameters.example.json) (ensure to set _`deploySQLMI`_ to *`true`*):
+- The deployment is using the ARM template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/azuredeploy.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/azuredeploy.parameters.example.json) (ensure to set _`deploySQLMI`_ to *`true`*):
 
   - _`sshRSAPublicKey`_ - Your SSH public key - sample syntax: `ssh-rsa AAAAB3N...NDOCE7U3DLBISw==\n`.
   - _`spnClientId`_ - Your Azure service principal id.
@@ -118,7 +118,7 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
   - _`logAnalyticsWorkspaceName`_ - Unique name for log analytics workspace deployment.
   - _`deploySQLMI`_ - Boolean that sets whether or not to deploy SQL Managed Instance, for this data controller and Azure SQL Managed Instance scenario, we will set it to *`true`*.
   - _`deployPostgreSQL`_ - Boolean that sets whether or not to deploy PostgreSQL, for this data controller and Azure SQL Managed Instance scenario, we leave it set to *`false`*.
-  - _`templateBaseUrl`_ - GitHub URL to the deployment template - filled in by default to point to [_microsoft/azure_arc_](https://github.com/microsoft/azure_arc) GitHub repository, but you can point this to your forked repo as well.
+  - _`templateBaseUrl`_ - GitHub URL to the deployment template - filled in by default to point to [_SQLLord/arc_jumpstart_arcbox_](https://github.com/SQLLord/arc_jumpstart_arcbox) GitHub repository, but you can point this to your forked repo as well.
   - _`deployBastion`_ - Choice (true | false) to deploy Azure Bastion.
 
 - You will also need to get the Azure Custom Location Resource Provider ([RP](https://learn.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types)) Object ID (OID) and export it as an environment variable:
@@ -137,14 +137,14 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
   $customLocationRPOID=(az ad sp list --filter "displayname eq 'Custom Locations RP'" --query "[?appDisplayName=='Custom Locations RP'].id" -o tsv)
   ```
 
-- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_data_jumpstart/microk8s/azure/arm_template) and run the below command:
+- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_data_jumpstart/microk8s/azure/arm_template) and run the below command:
 
   ```shell
   az group create --name <Name of the Azure resource group> --location <Azure Region>
   az deployment group create \
   --resource-group <Name of the Azure resource group> \
   --name <The name of this deployment> \
-  --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/azuredeploy.json \
+  --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/azuredeploy.json \
   --parameters <The _azuredeploy.parameters.json_ parameters file location> \
   --parameters customLocationRPOID="$customLocationRPOID"
   ```
@@ -158,7 +158,7 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
   az deployment group create \
   --resource-group Arc-Data-Microk8s \
   --name arcdatademo \
-  --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/azuredeploy.json \
+  --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/azuredeploy.json \
   --parameters customLocationRPOID="$customLocationRPOID" \
   --parameters azuredeploy.parameters.json
   --parameters templateBaseUrl="https://raw.githubusercontent.com/your--github--handle/azure_arc/microk8s-data/azure_arc_data_jumpstart/microk8s/azure/arm_template/"
@@ -221,7 +221,7 @@ If you already have [Microsoft Defender for Cloud](https://learn.microsoft.com/a
 
 ### Post Deployment
 
-- At first login, as mentioned in the "Automation Flow" section above, the [_DataServicesLogonScript_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/microk8s/azure/arm_template/artifacts/DataServicesLogonScript.ps1) PowerShell logon script will start it's run.
+- At first login, as mentioned in the "Automation Flow" section above, the [_DataServicesLogonScript_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/microk8s/azure/arm_template/artifacts/DataServicesLogonScript.ps1) PowerShell logon script will start it's run.
 
 - Let the script run it's course and **do not close** the PowerShell session, this will be done for you once completed.
 

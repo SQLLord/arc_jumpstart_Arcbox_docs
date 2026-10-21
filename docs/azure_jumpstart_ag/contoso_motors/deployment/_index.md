@@ -113,7 +113,7 @@ Once automation is complete, users can immediately start enjoying the Contoso Mo
 - Clone the Arc Jumpstart GitHub repository
 
   ```shell
-  git clone https://github.com/microsoft/azure_arc.git
+  git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
   ```
 
 - Azure IoT Operations requires creating a "user_impersonation" delegated permission on Azure Key Vault for this service principal.
@@ -148,7 +148,7 @@ Once automation is complete, users can immediately start enjoying the Contoso Mo
   az bicep upgrade
   ```
 
-- Edit the [main.parameters.json](https://github.com/microsoft/azure_arc/blob/main/azure_jumpstart_ag/contoso_motors/bicep/main.parameters.json) template parameters file and supply values for your environment.
+- Edit the [main.parameters.json](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_jumpstart_ag/contoso_motors/bicep/main.parameters.json) template parameters file and supply values for your environment.
 
   | Name                | Type     | Description                                                                                                           | Default |
   |---------------------|----------|-----------------------------------------------------------------------------------------------------------------------|---------|
@@ -194,7 +194,7 @@ Once automation is complete, users can immediately start enjoying the Contoso Mo
   $customLocationRPOID=(az ad sp list --filter "displayname eq 'Custom Locations RP'" --query "[?appDisplayName=='Custom Locations RP'].id" -o tsv)
   ```
 
-- Now you will deploy the Bicep file. Navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_jumpstart_ag/contoso_motors/bicep) and run the below command:
+- Now you will deploy the Bicep file. Navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_jumpstart_ag/contoso_motors/bicep) and run the below command:
 
   ```shell
   az login

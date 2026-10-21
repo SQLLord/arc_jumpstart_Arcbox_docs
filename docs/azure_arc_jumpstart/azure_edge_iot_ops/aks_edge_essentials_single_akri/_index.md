@@ -69,7 +69,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 - User edits the ARM template parameters file (1-time edit). These parameter values are used throughout the deployment.
 
-- Main [_azuredeploy_ ARM template](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/azuredeploy.json) will initiate the deployment of the following resources:
+- Main [_azuredeploy_ ARM template](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/azuredeploy.json) will initiate the deployment of the following resources:
 
   - _Virtual Network_ - Virtual Network for Azure Windows Server VM.
   - _Network Interface_ - Network Interface for Azure Windows Server VM.
@@ -77,7 +77,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
   - _Virtual Machine_ - Azure Windows Server VM.
   - _Custom script and Azure Desired State Configuration extensions_ - Configure the Azure Windows Server VM to host AKS Edge Essentials.
 
-- User remotes into client Windows VM, which automatically kicks off the [_LogonScript_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/artifacts/LogonScript.ps1) PowerShell script to:
+- User remotes into client Windows VM, which automatically kicks off the [_LogonScript_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/artifacts/LogonScript.ps1) PowerShell script to:
   - Create the AKS Edge Essentials cluster in the Windows Server VM
   - Onboard the Azure VM and AKS Edge Essentials cluster to Azure Arc
   - Deploy Akri and ONVIF mock camera
@@ -89,12 +89,12 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - Before deploying the ARM template, login to Azure using Azure CLI with the *`az login`* command.
 
-- The deployment uses the ARM template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/azuredeploy.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/azuredeploy.parameters.example.json).
+- The deployment uses the ARM template parameters file. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/azuredeploy.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/azuredeploy.parameters.example.json).
 
   - _`vmSize`_ - Client Windows VM size.
   - _`vmName`_ - Client Windows VM name.
@@ -110,14 +110,14 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
   - _`deployBastion`_ - Choice (true | false) to deploy [Azure Bastion](https://learn.microsoft.com/azure/bastion/bastion-overview) or not to connect to the client VM.
   - _`bastionHostName`_ - Azure Bastion name.
 
-- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/) and run the below command:
+- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/) and run the below command:
 
     ```shell
     az group create --name <Name of the Azure resource group> --location <Azure Region>
     az deployment group create \
     --resource-group <Name of the Azure resource group> \
     --name <The name of this deployment> \
-    --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/azuredeploy.json \
+    --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/azuredeploy.json \
     --parameters <The _azuredeploy.parameters.json_ parameters file location>
     ```
 
@@ -130,7 +130,7 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
     az deployment group create \
     --resource-group AKS-EE-Akri-Demo \
     --name akseedemo \
-    --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/azuredeploy.json \
+    --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_single_akri/arm_template/azuredeploy.json \
     --parameters azuredeploy.parameters.json
     ```
 

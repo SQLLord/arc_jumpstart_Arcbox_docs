@@ -69,18 +69,18 @@ As mentioned, this deployment will leverage ARM templates.
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
-- Edit the [_parameters file_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/grafana/grafana-template.parameters.json) providing the values that match your configuration as described above.
+- Edit the [_parameters file_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/grafana/grafana-template.parameters.json) providing the values that match your configuration as described above.
 
     ![Screenshot of ARM template parameters file](./05.png)
 
-- Locate the [_ARM template_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/grafana/grafana-template.json) and deploy it by running the following command:
+- Locate the [_ARM template_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/grafana/grafana-template.json) and deploy it by running the following command:
 
     ```shell
     az deployment group create --resource-group <Name of the Azure resource group> \
-    --template-uri "https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/grafana/grafana-template.json" \
+    --template-uri "https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/grafana/grafana-template.json" \
     --parameters <grafana-template.parameters.json parameter file location>
     ```
 
@@ -167,4 +167,4 @@ Complete the following steps to clean up your environment:
 - [Delete the Log Analytics workspace](https://learn.microsoft.com/azure/azure-monitor/logs/delete-workspace#powershell)
 - [Delete Azure Managed Grafana instance](https://learn.microsoft.com/cli/azure/grafana?view=azure-cli-latest#az-grafana-delete)
 
-As an alternative you can use this [_clean-up script_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/grafana/grafana-cleanup-script.sh). Edit the variables in the script to fit your environment.
+As an alternative you can use this [_clean-up script_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/grafana/grafana-cleanup-script.sh). Edit the variables in the script to fit your environment.

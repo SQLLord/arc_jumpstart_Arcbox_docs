@@ -14,14 +14,14 @@ in this scenario, you will first deploy a nginx ingress controller to your clust
 
 By doing so, you will be able to make real-time changes to the application and show how the GitOps flow takes effect.
 
-> **Note:** This guide assumes you already deployed a kind and connected it to Azure Arc. If you haven't, this repository offers you a way to do so in the [kind onboarding guide](../../../kind/local_kind/). Furthermore, kind should be deployed with [_kind_cluster_ingress.yaml_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/kind/kind_cluster_ingress.yaml) instead of _kind_cluster.yaml_.
+> **Note:** This guide assumes you already deployed a kind and connected it to Azure Arc. If you haven't, this repository offers you a way to do so in the [kind onboarding guide](../../../kind/local_kind/). Furthermore, kind should be deployed with [_kind_cluster_ingress.yaml_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/kind/kind_cluster_ingress.yaml) instead of _kind_cluster.yaml_.
 
 ## Prerequisites
 
 * Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 * Fork the ["Hello Arc"](https://github.com/likamrat/hello_arc) demo application repository.
@@ -95,7 +95,7 @@ The demo application that will be deployed later in this scenario relies on an i
 
     ![Running ingress nginx controller](./03.png)
 
-> **Note:** If the ingress controller fails to start, you should redeploy the kind cluster with [_kind_cluster_ingress.yaml_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/kind/kind_cluster_ingress.yaml) instead of _kind_cluster.yaml_.
+> **Note:** If the ingress controller fails to start, you should redeploy the kind cluster with [_kind_cluster_ingress.yaml_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/kind/kind_cluster_ingress.yaml) instead of _kind_cluster.yaml_.
 
 * Finally, test that the ingress is responding to traffic. To test this, either browse to [http://localhost](http://localhost) or use the command line to connect to `localhost`. You should get a HTTP 404 response with a nginx footer. This shows that the ingress is working. The 404 response is to be expected since you haven't setup an ingress route yet. You will do that in the next section.
 
@@ -137,7 +137,7 @@ For our scenario, we will deploy the "Hello Arc" application from the ["demo rep
 
 ### Deployment
 
-* Edit the environment variables in the [*az_k8sconfig_helm_kind*](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/kind/gitops/helm/az_k8sconfig_helm_kind.sh) shell script to match your parameters, and run it using the ```. az_k8sconfig_helm_kind.sh``` command.
+* Edit the environment variables in the [*az_k8sconfig_helm_kind*](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/kind/gitops/helm/az_k8sconfig_helm_kind.sh) shell script to match your parameters, and run it using the ```. az_k8sconfig_helm_kind.sh``` command.
 
     > **Note:** The extra dot is due to the script having an *export* function and that needs to have the vars exported in the same shell session as the rest of the commands.
 
@@ -209,7 +209,7 @@ For our scenario, we will deploy the "Hello Arc" application from the ["demo rep
 
 ## Cleanup
 
-* To delete the GitOps configuration and it's respective Kubernetes resources, edit the environment variables to match the Azure Arc Kubernetes cluster and Resources in the [az_k8sconfig_helm_cleanup_kind](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/kind/gitops/helm/az_k8sconfig_helm_cleanup_kind.sh) shell script.It is recommended to run this script locally, since it also removes elements from the local cluster.
+* To delete the GitOps configuration and it's respective Kubernetes resources, edit the environment variables to match the Azure Arc Kubernetes cluster and Resources in the [az_k8sconfig_helm_cleanup_kind](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/kind/gitops/helm/az_k8sconfig_helm_cleanup_kind.sh) shell script.It is recommended to run this script locally, since it also removes elements from the local cluster.
 
     ```shell
     . ./az_k8sconfig_helm_cleanup_kind.sh

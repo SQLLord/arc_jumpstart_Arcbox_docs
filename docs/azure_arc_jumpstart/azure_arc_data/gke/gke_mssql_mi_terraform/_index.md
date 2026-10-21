@@ -23,7 +23,7 @@ By the end of this scenario, you will have a GKE cluster deployed with an Azure 
 - Export the *TF_VAR_CL_OID* variable
 - *terraform init*
 - *terraform apply*
-- User remotes into client Windows VM, which automatically kicks off the [DataServicesLogonScript](https://github.com/microsoft/azure_arc/blob/main/azure_arc_data_jumpstart/gke/terraform/artifacts/DataServicesLogonScript.ps1) PowerShell script that deploys and configures Azure Arc-enabled data services on the GKE cluster.
+- User remotes into client Windows VM, which automatically kicks off the [DataServicesLogonScript](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_data_jumpstart/gke/terraform/artifacts/DataServicesLogonScript.ps1) PowerShell script that deploys and configures Azure Arc-enabled data services on the GKE cluster.
 - Open Azure Data Studio and connect to SQL MI instance and sample database
 - *kubectl delete namespace arc*
 - *terraform destroy*
@@ -33,7 +33,7 @@ By the end of this scenario, you will have a GKE cluster deployed with an Azure 
 - Clone the Arc Jumpstart GitHub repository
 
   ```shell
-  git clone https://github.com/microsoft/azure_arc.git
+  git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
   ```
 
 - [Install or update Azure CLI to version 2.65.0 and above](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Use the below command to check your current installed version.
@@ -207,7 +207,7 @@ Read the below explanation to get familiar with the automation and deployment fl
     deploy_SQLMI             = true
     SQLMIHA                  = true
     deploy_PostgreSQL        = false
-    templateBaseUrl          = "https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_data_jumpstart/gke/terraform/"
+    templateBaseUrl          = "https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_data_jumpstart/gke/terraform/"
     MY_IP                    = "192.168.10.10"
   ```
 

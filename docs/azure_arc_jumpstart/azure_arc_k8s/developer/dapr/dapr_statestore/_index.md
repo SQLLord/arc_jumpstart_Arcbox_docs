@@ -19,7 +19,7 @@ Dapr is a portable, event-driven runtime that makes it easy for any developer to
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - As mentioned, this scenario starts at the point where you already have a connected Kubernetes cluster to Azure Arc.
@@ -97,7 +97,7 @@ To create a new Cluster extension instance, we will use the _k8s-extension creat
 
     ![Screenshot showing the Azure portal with Azure Arc-enabled Kubernetes resource extensions](./04.png)
 
-- Edit the environment variables [in the script](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/multi_distributions/dapr/dapr_k8s_statestore.sh) to match your environment parameters followed by running the _`. ./dapr_k8s_statestore.sh`_ command.
+- Edit the environment variables [in the script](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/multi_distributions/dapr/dapr_k8s_statestore.sh) to match your environment parameters followed by running the _`. ./dapr_k8s_statestore.sh`_ command.
 
     ![Screenshot parameter](./05.png)
 
@@ -151,7 +151,7 @@ To create a new Cluster extension instance, we will use the _k8s-extension creat
 
     ![Screenshot Node App service call](./12.png)
 
-- Navigate to the [dapr folder](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/multi_distributions/dapr/) and submit an order to the application.
+- Navigate to the [dapr folder](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/multi_distributions/dapr/) and submit an order to the application.
 
     ```shell
     curl --request POST --data "@sample.json" --header Content-Type:application/json $EXTERNAL_IP/neworder

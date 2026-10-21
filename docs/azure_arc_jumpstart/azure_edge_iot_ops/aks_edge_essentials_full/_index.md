@@ -63,7 +63,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 - User edits the Azure Bicep template parameters file (1-time edit). These parameter values are used throughout the deployment.
 
-- Main [_main.bicep_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_full/bicep_template/main.bicep) will initiate the deployment of the following resources:
+- Main [_main.bicep_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_full/bicep_template/main.bicep) will initiate the deployment of the following resources:
 
   - _Virtual Network_ - Virtual Network for Azure Windows Server VM.
   - _Network Interface_ - Network Interface for Azure Windows Server VM.
@@ -71,7 +71,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
   - _Virtual Machine_ - Azure Windows Server VM.
   - _Custom script_ - Configure the Azure Windows Server virtual machine to host the Hyper-V virtual machines that will act as AKS Edge Essentials nodes.
 
-- User remotes into the Azure Windows Server VM, which automatically kicks off the [_LogonScript_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_full/bicep_template/artifacts/LogonScript.ps1) PowerShell script to create the Hyper-V virtual machines, AKS Edge Essentials cluster, and onboard the Hyper-V VMs and AKS Edge Essentials cluster to Azure Arc.
+- User remotes into the Azure Windows Server VM, which automatically kicks off the [_LogonScript_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_full/bicep_template/artifacts/LogonScript.ps1) PowerShell script to create the Hyper-V virtual machines, AKS Edge Essentials cluster, and onboard the Hyper-V VMs and AKS Edge Essentials cluster to Azure Arc.
 
 ## Deployment
 
@@ -80,12 +80,12 @@ As mentioned, this deployment will leverage Azure Bicep templates. You will depl
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - Before deploying the Azure Bicep template, login to Azure using Azure CLI with the *`az login`* command.
 
-- The deployment uses the Azure Bicep parameters file. Before initiating the deployment, edit the [_main.parameters.json_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_full/bicep_template/main.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/microsoft/azure_arc/blob/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_full/bicep_template/main.parameters.example.json).
+- The deployment uses the Azure Bicep parameters file. Before initiating the deployment, edit the [_main.parameters.json_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_full/bicep_template/main.parameters.json) file located in your local cloned repository folder. An example parameters file is located [here](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_full/bicep_template/main.parameters.example.json).
 
   - _`kubernetesDistribution`_ - Choice (k8s | k3s) kubernetes distribution.
   - _`spnClientId`_ - Your Azure service principal id.
@@ -95,7 +95,7 @@ As mentioned, this deployment will leverage Azure Bicep templates. You will depl
   - _`windowsAdminPassword`_ - Azure Windows Server VM Password. Password must have 3 of the following: 1 lower case character, 1 upper case character, 1 number, and 1 special character. The value must be between 12 and 123 characters long.
   - _`deployBastion`_ - Choice (true | false) to deploy [Azure Bastion](https://learn.microsoft.com/azure/bastion/bastion-overview) or not to connect to the Azure Windows Server VM.
 
-- To deploy the Azure Bicep template, navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_full/bicep_template) and run the below command:
+- To deploy the Azure Bicep template, navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_k8s_jumpstart/aks_hybrid/aks_edge_essentials_full/bicep_template) and run the below command:
 
     ```shell
     az group create --name <Name of the Azure resource group> --location <Azure Region>

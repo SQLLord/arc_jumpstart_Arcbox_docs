@@ -117,7 +117,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 
 2. User deploys the ARM template at subscription level. The ARM template will create two resources groups with:
 
-    - Azure resource group, automated by the template [**cloudDeploy.json**](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/privatelink/ARM/cloudDeploy.json):
+    - Azure resource group, automated by the template [**cloudDeploy.json**](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/privatelink/ARM/cloudDeploy.json):
         - Azure Arc Private Link Scope
         - Azure Arc-enabled server
         - Azure Private Link Endpoint for the Azure Arc-enabled Server
@@ -125,13 +125,13 @@ For you to get familiar with the automation and deployment flow, below is an exp
         - Azure VPN Gateway and its public IP address
         - Azure VNET
 
-    - On-premises resource group, automated by the template [**onPremisesDeploy.json**](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/privatelink/ARM/onPremisesDeploy.json):
+    - On-premises resource group, automated by the template [**onPremisesDeploy.json**](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/privatelink/ARM/onPremisesDeploy.json):
         - Azure VNET
         - Azure Bastion
         - Azure VPN Gateway and its public IP address
-        - Azure Windows Virtual Machine with a custom script extension that runs the [**Bootstrap.ps1**](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/privatelink/artifacts/Bootstrap.ps1) script
+        - Azure Windows Virtual Machine with a custom script extension that runs the [**Bootstrap.ps1**](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/privatelink/artifacts/Bootstrap.ps1) script
 
-        > **Note:** The [_installArcAgent.ps1_](https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/privatelink/artifacts/installArcAgent.ps1) script will enable the OS firewall and set up new rules for incoming and outgoing connections. By default all incoming and outgoing traffic will be allowed, except blocking Azure IMDS outbound traffic to the _169.254.169.254_ remote address.
+        > **Note:** The [_installArcAgent.ps1_](https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/privatelink/artifacts/installArcAgent.ps1) script will enable the OS firewall and set up new rules for incoming and outgoing connections. By default all incoming and outgoing traffic will be allowed, except blocking Azure IMDS outbound traffic to the _169.254.169.254_ remote address.
 
 3. User logs in to the on-premises VM using Azure Bastion to trigger the Azure Arc onboarding script.
 
@@ -150,14 +150,14 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
 - Clone the Arc Jumpstart GitHub repository
 
     ```shell
-    git clone https://github.com/microsoft/azure_arc.git
+    git clone https://github.com/SQLLord/arc_jumpstart_arcbox.git
     ```
 
 - Before deploying the ARM template, login to Azure using AZ CLI with the *`az login`* command.
 
-- The deployment will use an ARM template parameters file to customize your environment. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/privatelink/azuredeploy.parameters.json) file located in your local cloned repository folder. Example parameters files is located [here](https://github.com/microsoft/azure_arc/blob/main/azure_arc_servers_jumpstart/privatelink/azuredeploy.example.parameters.json).
+- The deployment will use an ARM template parameters file to customize your environment. Before initiating the deployment, edit the [_azuredeploy.parameters.json_](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/privatelink/azuredeploy.parameters.json) file located in your local cloned repository folder. Example parameters files is located [here](https://github.com/SQLLord/arc_jumpstart_arcbox/blob/master/azure_arc_servers_jumpstart/privatelink/azuredeploy.example.parameters.json).
 
-- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_arc_servers_jumpstart/privatelink) and run the below command, start deploying resources:
+- To deploy the ARM template, navigate to the local cloned [deployment folder](https://github.com/SQLLord/arc_jumpstart_arcbox/tree/master/azure_arc_servers_jumpstart/privatelink) and run the below command, start deploying resources:
 
     ```shell
     az deployment sub create \
@@ -171,7 +171,7 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
     ```shell
     az deployment sub create \
     --location eastus \
-    --template-uri https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_servers_jumpstart/privatelink/azuredeploy.json \
+    --template-uri https://raw.githubusercontent.com/SQLLord/arc_jumpstart_arcbox/master/azure_arc_servers_jumpstart/privatelink/azuredeploy.json \
     --parameters azuredeploy.example.parameters.json
     ```
 
